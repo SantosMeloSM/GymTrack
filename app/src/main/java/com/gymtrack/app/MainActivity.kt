@@ -1,6 +1,11 @@
 package com.gymtrack.app
 
+import android.graphics.Color
 import android.os.Bundle
+import androidx.activity.SystemBarStyle
+import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.runtime.LaunchedEffect
+import com.gymtrack.app.data.repo.ThemeMode
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -22,6 +27,16 @@ class MainActivity : ComponentActivity() {
         val container = (application as GymTrackApp).container
         setContent {
             val settings by container.settings.settings.collectAsState(initial = AppSettings())
+            val dark = when (settings.themeMode) {
+                ThemeMode.DARK -> true
+                ThemeMode.LIGHT -> false
+                ThemeMode.SYSTEM -> isSystemInDarkTheme()
+            }
+            // System bars follow the app theme (not only the system setting).
+            LaunchedEffect(dark) {
+                val style = if (dark) SystemBarStyle.dark(Color.TRANSPARENT) else SystemBarStyle.light(Color.TRANSPARENT, Color.TRANSPARENT)
+                enableEdgeToEdge(statusBarStyle = style, navigationBarStyle = style)
+            }
             GymTrackTheme(settings.themeMode) { GymTrackRoot(settings) }
         }
     }

@@ -112,9 +112,9 @@ fun ProgressScreen(nav: NavController) {
                         Text("Consistência", style = MaterialTheme.typography.titleMedium)
                         Spacer(Modifier.height(10.dp))
                         StatRow {
-                            StatTile("Sequência", "${c.weekStreak(dates, today, target)} sem.", Modifier.weight(1f), sub = "meta $target/sem.")
-                            StatTile("Aderência", "${c.adherence(dates, today, target, 8)}%", Modifier.weight(1f), sub = "últimas 8 sem.")
-                            StatTile("Dias ativos", "${c.activeDays(dates, today, 30)}", Modifier.weight(1f), sub = "últimos 30 dias")
+                            StatTile("Sequência", "${c.weekStreak(dates, today, target)} sem.", Modifier.weight(1f), sub = "meta $target/sem")
+                            StatTile("Aderência", "${c.adherence(dates, today, target, 8)}%", Modifier.weight(1f), sub = "8 semanas")
+                            StatTile("Dias ativos", "${c.activeDays(dates, today, 30)}", Modifier.weight(1f), sub = "30 dias")
                         }
                     }
                 }
