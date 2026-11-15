@@ -5,7 +5,7 @@
 | Item | Valor |
 |---|---|
 | Arquivo | `GymTrack-v1.3.apk` |
-| Tipo | Release assinado (v2). otimizado com R8 |
+| Tipo | Release assinado (v2), otimizado com R8 |
 | Tamanho | 7.076.292 bytes |
 | SHA-256 do APK | `dbc62ebfe718e6ad251b024a912144d3a1544ed0229cdaabaf151f7b470811fd` |
 | SHA-256 do certificado | `008e77bbc0e9af9fff2326dff50d434dc70b03dc984ffb71878a04214ac9a31c` (o mesmo de todas as versões) |
