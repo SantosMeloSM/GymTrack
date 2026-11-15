@@ -45,14 +45,15 @@ for key, name, muscle in seeds:
         try:
             with Image.open(p) as im:
                 im.load()
-                if im.size != (720, 480): problems.append(f"{key}/{i}.webp tamanho {im.size}"); status = "ERRO"
+                expected = (640, 640) if m["kind"] == "anatomy" else (720, 480)
+                if im.size != expected: problems.append(f"{key}/{i}.webp tamanho {im.size}"); status = "ERRO"
         except Exception as e:
             problems.append(f"{key}/{i}.webp não decodifica: {e}"); status = "ERRO"
         h = hashlib.sha256(data).hexdigest()
         if h in hashes: problems.append(f"{key}/{i}.webp idêntica a {hashes[h]}"); status = "ERRO"
         hashes[h] = f"{key}/{i}.webp"
-    kind = "Foto" if m["kind"] == "photo" else "Ilustração"
-    src = f"free-exercise-db: `{m['sourceId']}`" if m["kind"] == "photo" else "Original GymTrack"
+    kind = {"photo": "Foto", "anatomy": "Anatomia 3D", "illustration": "Ilustração"}[m["kind"]]
+    src = {"photo": f"free-exercise-db: `{m['sourceId']}`", "anatomy": f"Enviada pelo usuário: `{m['sourceId']}`", "illustration": "Original GymTrack"}[m["kind"]]
     rows.append((name, key, kind, m["frames"], src, m["license"], status))
 
 extra = sorted(set(manifest) - {k for k, _, _ in seeds})
@@ -61,22 +62,24 @@ n = len(seeds)
 with_img = sum(1 for r in rows if r[3] >= 1 and r[6] == "OK")
 two_pos = sum(1 for r in rows if r[3] >= 2 and r[6] == "OK")
 photos = sum(1 for r in rows if r[2] == "Foto")
+anatomy = sum(1 for r in rows if r[2] == "Anatomia 3D")
 illus = sum(1 for r in rows if r[2] == "Ilustração")
 files = sum(r[3] for r in rows)
 invalid = sum(1 for p in problems if "ausente" in p or "não" in p or "tamanho" in p or "idêntica" in p)
 
 L = []
-L.append("# GymTrack v1.1 — Relatório de auditoria das imagens\n")
+L.append("# GymTrack v1.2 — Relatório de auditoria das imagens\n")
 L.append("Gerado por `tools/audit_images.py` a partir dos arquivos incluídos no APK (`app/src/main/assets/exercises`).\n")
 L.append("## Resumo\n")
 L.append("| Indicador | Valor |\n|---|---|")
 L.append(f"| Exercícios na biblioteca padrão | **{n}** |")
 L.append(f"| Com pelo menos uma imagem correta | **{with_img} ({with_img*100//n}%)** |")
 L.append(f"| Com duas ou mais posições | **{two_pos}** |")
-L.append(f"| Fotografias reais | {photos} exercícios ({photos*2} fotos) |")
+L.append(f"| **Anatomia 3D (padrão desejado)** | **{anatomy}** exercícios |")
+L.append(f"| Fotografias reais (ainda sem imagem no padrão) | {photos} exercícios |")
 L.append(f"| Ilustrações originais | {illus} exercícios |")
-L.append(f"| Com animação | {two_pos} — reprodução sob demanda alternando as posições reais (não há vídeos/GIFs) |")
-L.append(f"| Arquivos de imagem | {files} WebP, 720×480 (3:2), total {total_bytes/1024/1024:.1f} MB |")
+L.append(f"| Com animação (botão play) | {two_pos} — loop suave entre as posições reais, gerado no app; não há quadros intermediários inventados |")
+L.append(f"| Arquivos de imagem | {files} WebP (anatomia 640×640; fotos/ilustrações 720×480), total {total_bytes/1024/1024:.1f} MB |")
 L.append(f"| Arquivos inválidos | **{invalid}** |")
 L.append(f"| Imagens repetidas entre exercícios | **{sum(1 for p in problems if 'idêntica' in p)}** |")
 L.append(f"| Funciona offline | Sim — todas as imagens estão dentro do APK (assets) |\n")
@@ -88,6 +91,7 @@ L.append("- **Arquivo existe / é WebP / decodifica / 720×480 / não repetido:*
 L.append("- **Aparece na biblioteca, nos detalhes e durante o treino:** teste de interface `UiFlowTest.imagesInLibraryDetailAndWorkout` e verificação manual no emulador Android 10 com o APK release.")
 L.append("- **Offline:** as imagens são carregadas de `file:///android_asset/` — nenhuma URL externa é usada pelo app.\n")
 L.append("## Origem e licença\n")
+L.append("- **Anatomia 3D:** imagens enviadas pelo proprietário do app (geradas por IA, segundo os nomes dos arquivos). Cada uma foi revisada; as rejeitadas estão listadas em `ENTREGA/REVISAO-IMAGENS-ENVIADAS.md`. As duas posições foram separadas, alinhadas e convertidas para WebP pelo script `tools/import_user_images.py`.")
 L.append("- **Fotos:** [Free Exercise DB](https://github.com/yuhonas/free-exercise-db), derivado de [wrkout/exercises.json](https://github.com/wrkout/exercises.json). "
          "Ambos são publicados sob **The Unlicense** (dedicação ao domínio público), que permite uso, modificação e distribuição, inclusive comercial, sem exigência de atribuição. "
          "O crédito é exibido mesmo assim no app (*Mais › Créditos das imagens* e no rodapé de cada exercício). "

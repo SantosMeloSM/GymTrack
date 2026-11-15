@@ -1,6 +1,45 @@
 # GymTrack — Entrega
 
-## Versão atual: v1.1 (biblioteca visual)
+## Versão atual: v1.2 (ilustrações anatômicas 3D + demonstração em loop)
+
+| Item | Valor |
+|---|---|
+| Arquivo | `GymTrack-v1.2.apk` |
+| Tipo | Release assinado (v2), otimizado com R8 |
+| Tamanho | 6.618.226 bytes (≈ 6,3 MB) |
+| SHA-256 do APK | `e8767e751d16eeb911af8010bdcaf4fe81e7e24b6de95b5a8a709de74173027b` |
+| SHA-256 do certificado | `008e77bbc0e9af9fff2326dff50d434dc70b03dc984ffb71878a04214ac9a31c` (o mesmo das versões anteriores) |
+| Pacote | `com.gymtrack.app` · versão 1.2 (versionCode 3) · Android 8.0+ |
+
+Instale por cima da versão anterior, sem desinstalar: os dados são mantidos.
+
+### O que mudou
+- **64 exercícios com as suas ilustrações anatômicas 3D**: 58 que já existiam e 6 novos criados a partir delas
+  (agachamento sumô com halter, panturrilha com barra, rosca spider, pullover, puxada unilateral,
+  tríceps francês unilateral). A biblioteca agora tem 107 exercícios.
+- Revisão das 95 imagens únicas enviadas (154 arquivos, 59 duplicados).
+  **3 rejeitadas por erro:** puxada com a barra atrás da nuca, peck deck sem a posição de contração,
+  crucifixo invertido sem a posição inicial. **1 não identificada com segurança.**
+  Detalhes em `REVISAO-IMAGENS-ENVIADAS.md`.
+- **Play = mini‑vídeo em loop**: a figura passa suavemente da posição inicial para a final e volta, repetindo.
+  Funciona nos detalhes, em tela cheia e na demonstração durante o treino. Roda só enquanto está na tela.
+- Detalhes no padrão da imagem de referência: as duas posições lado a lado, em fundo branco.
+- **43 exercícios ainda sem ilustração 3D** continuam com fotos ou ilustrações da v1.1 (nenhum fica sem imagem).
+  Os prompts prontos para gerá-los no mesmo estilo estão em `REVISAO-IMAGENS-ENVIADAS.md`.
+
+### Testes da v1.2
+- **28 testes automatizados passando.** A auditoria de mídia confere os 216 arquivos.
+  O teste de interface verifica que o Play inicia o loop e o Pause o encerra.
+- **Emulador Android 10, APK release instalado por cima da v1.1:**
+  - os dados foram mantidos;
+  - a biblioteca aparece com 107 exercícios e miniaturas 3D;
+  - os detalhes mostram as duas posições;
+  - o Play anima em loop (capturas em `capturas-v1.2/`).
+- Não testado em aparelho físico.
+
+---
+
+## Versão anterior: v1.1 (biblioteca visual)
 
 | Item | Valor |
 |---|---|

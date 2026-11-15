@@ -9,6 +9,7 @@ import androidx.compose.ui.test.junit4.createAndroidComposeRule
 import androidx.compose.ui.test.onAllNodesWithText
 import androidx.compose.ui.test.onAllNodesWithTag
 import androidx.compose.ui.test.assertTextEquals
+import androidx.compose.ui.test.assertCountEquals
 import androidx.compose.ui.test.performScrollTo
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onNodeWithText
@@ -188,6 +189,15 @@ class UiFlowTest {
         rule.onNodeWithTag("lib_Rosca direta com barra").performClick()
         rule.waitUntilAtLeastOneExists(hasTestTag("demo_Rosca direta com barra"), 5_000)
         rule.onNodeWithTag("demo_play").assertExists()
+        // Play starts the looping demonstration (an infinite animation, so drive the clock manually)
+        rule.mainClock.autoAdvance = false
+        rule.onNodeWithTag("demo_play").performClick()
+        rule.mainClock.advanceTimeBy(1_500)
+        rule.onNode(hasTestTag("demo_loop")).assertExists()
+        rule.onNodeWithTag("demo_play").performClick() // pause
+        rule.mainClock.advanceTimeBy(500)
+        rule.onAllNodes(hasTestTag("demo_loop")).assertCountEquals(0)
+        rule.mainClock.autoAdvance = true
         rule.onNodeWithText("Músculos trabalhados").assertExists()
         rule.onNodeWithTag("demo_expand").performClick()
         rule.waitUntilAtLeastOneExists(hasTestTag("demo_fullscreen"), 5_000)

@@ -58,7 +58,8 @@ class MediaAuditTest {
                 if (bytes == null) { problems += "missing $path"; return@repeat }
                 if (String(bytes, 0, 4) != "RIFF" || String(bytes, 8, 4) != "WEBP") problems += "not webp $path"
                 val bmp = BitmapFactory.decodeByteArray(bytes, 0, bytes.size)
-                if (bmp == null || bmp.width != 720 || bmp.height != 480) problems += "decode/size $path ${bmp?.width}x${bmp?.height}"
+                val expected = if (entry.kind == "anatomy") 640 to 640 else 720 to 480
+                if (bmp == null || bmp.width != expected.first || bmp.height != expected.second) problems += "decode/size $path ${bmp?.width}x${bmp?.height}"
                 val h = MessageDigest.getInstance("SHA-256").digest(bytes).joinToString("") { "%02x".format(it) }
                 hashes.put(h, path)?.let { other -> problems += "duplicate image $path == $other" }
                 if (bytes.size > 120_000) problems += "too large $path ${bytes.size}"
@@ -66,6 +67,7 @@ class MediaAuditTest {
             assertTrue("$key mistakes", ExerciseMistakes.byKey[key].orEmpty().isNotBlank())
         }
         assertTrue(problems.joinToString("\n"), problems.isEmpty())
+        assertTrue("anatomy style used for the provided images", media.manifest.values.count { it.kind == "anatomy" } >= 64)
     }
 
     @Test fun customImagesOverrideAndExerciseWithoutImagesIsHandled() {

@@ -1,5 +1,13 @@
 package com.gymtrack.app.ui.components
 
+import androidx.compose.animation.core.LinearEasing
+import androidx.compose.animation.core.RepeatMode
+import androidx.compose.animation.core.animateFloat
+import androidx.compose.animation.core.infiniteRepeatable
+import androidx.compose.animation.core.rememberInfiniteTransition
+import androidx.compose.animation.core.tween
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
@@ -76,6 +84,42 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 const val DEMO_RATIO = 3f / 2f
+const val ANATOMY_RATIO = 2f
+
+val ExerciseDemo.isAnatomy get() = kind == "anatomy"
+private val AnatomyBg = Color(0xFFFFFFFF)
+
+/**
+ * Looping "mini video": smoothly blends each real position into the next (hold, then ease),
+ * running only while composed. Two frames give a start → end → start loop.
+ */
+@Composable
+fun LoopPlayer(frames: List<Any>, description: String, modifier: Modifier = Modifier, scale: ContentScale = ContentScale.Fit, holdMs: Int = 520, blendMs: Int = 480) {
+    if (frames.isEmpty()) return
+    val n = frames.size
+    val transition = rememberInfiniteTransition(label = "demo-loop")
+    val t by transition.animateFloat(
+        initialValue = 0f, targetValue = n.toFloat(),
+        animationSpec = infiniteRepeatable(tween(n * (holdMs + blendMs), easing = LinearEasing), RepeatMode.Restart),
+        label = "demo-t",
+    )
+    val idx = t.toInt().coerceIn(0, n - 1)
+    val hold = holdMs / (holdMs + blendMs).toFloat()
+    val local = t - idx
+    val raw = ((local - hold) / (1f - hold)).coerceIn(0f, 1f)
+    val blend = raw * raw * (3 - 2 * raw) // smoothstep
+    val next = (idx + 1) % n
+    val ctx = LocalContext.current
+    Box(modifier.semantics { contentDescription = description }.testTag("demo_loop")) {
+        frames.forEachIndexed { i, f ->
+            val alpha = when (i) { idx -> 1f; next -> blend; else -> 0f }
+            if (alpha > 0f) AsyncImage(
+                model = ImageRequest.Builder(ctx).data(f).crossfade(false).build(), contentDescription = null, contentScale = scale,
+                modifier = Modifier.fillMaxSize().graphicsLayer { this.alpha = alpha },
+            )
+        }
+    }
+}
 
 @Composable
 fun rememberDemo(e: ExerciseEntity): ExerciseDemo {
@@ -100,12 +144,15 @@ fun ExerciseThumb(e: ExerciseEntity, modifier: Modifier = Modifier, width: Dp = 
     val demo = rememberDemo(e)
     Box(
         modifier.width(width).aspectRatio(DEMO_RATIO).clip(RoundedCornerShape(12.dp))
-            .background(MaterialTheme.colorScheme.surfaceContainerHighest)
+            .background(if (demo.isAnatomy) AnatomyBg else MaterialTheme.colorScheme.surfaceContainerHighest)
             .then(if (onClick != null) Modifier.clickable(onClick = onClick) else Modifier)
             .testTag("thumb_${e.name}"),
         contentAlignment = Alignment.Center,
     ) {
-        if (demo.hasImages) DemoImage(demo.frames.first(), "Imagem de ${e.name}", Modifier.fillMaxSize(), sizePx = 360)
+        if (demo.hasImages) {
+            if (demo.isAnatomy) DemoImage(demo.frames.last(), "Imagem de ${e.name}", Modifier.fillMaxSize().padding(2.dp), scale = ContentScale.Fit, sizePx = 320)
+            else DemoImage(demo.frames.first(), "Imagem de ${e.name}", Modifier.fillMaxSize(), sizePx = 360)
+        }
         else Column(horizontalAlignment = Alignment.CenterHorizontally) {
             Icon(Icons.Outlined.FitnessCenter, null, tint = MaterialTheme.colorScheme.primary, modifier = Modifier.size(20.dp))
             Text(MuscleGroup.fromName(e.primaryMuscle)?.label ?: "", style = MaterialTheme.typography.labelSmall, color = MaterialTheme.colorScheme.onSurfaceVariant, maxLines = 1)
@@ -114,21 +161,10 @@ fun ExerciseThumb(e: ExerciseEntity, modifier: Modifier = Modifier, width: Dp = 
 }
 
 @Composable
-private fun PageDots(state: PagerState, count: Int, modifier: Modifier = Modifier) {
+private fun PageDots(state: PagerState, count: Int, modifier: Modifier = Modifier, dot: Color = Color.White) {
     Row(modifier, horizontalArrangement = Arrangement.spacedBy(6.dp)) {
         repeat(count) { i ->
-            Box(Modifier.size(if (state.currentPage == i) 8.dp else 6.dp).clip(CircleShape).background(if (state.currentPage == i) Color.White else Color.White.copy(alpha = 0.45f)))
-        }
-    }
-}
-
-/** Plays the frames in sequence while [playing]; stops automatically when it leaves composition. */
-@Composable
-private fun AutoPlay(state: PagerState, count: Int, playing: Boolean) {
-    LaunchedEffect(playing, count) {
-        while (playing && count > 1) {
-            delay(1100)
-            state.animateScrollToPage((state.currentPage + 1) % count)
+            Box(Modifier.size(if (state.currentPage == i) 8.dp else 6.dp).clip(CircleShape).background(if (state.currentPage == i) dot else dot.copy(alpha = 0.45f)))
         }
     }
 }
@@ -150,22 +186,49 @@ fun ExerciseDemoView(e: ExerciseEntity, modifier: Modifier = Modifier, onExpand:
         }
         return
     }
-    val pager = rememberPagerState { demo.frames.size }
     var playing by remember(e.id) { mutableStateOf(false) }
-    AutoPlay(pager, demo.frames.size, playing)
-    Box(modifier.fillMaxWidth().aspectRatio(DEMO_RATIO).clip(MaterialTheme.shapes.large).background(Color.Black).testTag("demo_${e.name}")) {
-        HorizontalPager(pager, Modifier.fillMaxSize()) { page ->
-            DemoImage(demo.frames[page], "${e.name}: ${demo.captions.getOrElse(page) { "" }}", Modifier.fillMaxSize().clickable { onExpand(page) })
+    if (demo.isAnatomy) {
+        Box(modifier.fillMaxWidth().aspectRatio(ANATOMY_RATIO).clip(MaterialTheme.shapes.large).background(AnatomyBg).testTag("demo_${e.name}")) {
+            if (playing) {
+                LoopPlayer(demo.frames, "Demonstração animada de ${e.name}", Modifier.fillMaxSize().padding(8.dp))
+            } else {
+                Row(Modifier.fillMaxSize()) {
+                    demo.frames.take(2).forEachIndexed { i, f ->
+                        Box(Modifier.weight(1f).fillMaxSize().clickable { onExpand(i) }) {
+                            DemoImage(f, "${e.name}: ${demo.captions.getOrElse(i) { "" }}", Modifier.fillMaxSize().padding(6.dp), scale = ContentScale.Fit)
+                            Text(
+                                if (i == 0) "INÍCIO" else "FIM", style = MaterialTheme.typography.labelSmall, color = Color(0xFF5B616B),
+                                modifier = Modifier.align(Alignment.TopStart).padding(10.dp),
+                            )
+                        }
+                    }
+                }
+            }
+            Row(Modifier.align(Alignment.BottomEnd).padding(8.dp), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                if (demo.animatable) RoundIcon(if (playing) Icons.Filled.Pause else Icons.Filled.PlayArrow, if (playing) "Pausar demonstração" else "Reproduzir demonstração", tag = "demo_play") { playing = !playing }
+                RoundIcon(Icons.Filled.Fullscreen, "Ampliar", tag = "demo_expand") { onExpand(0) }
+            }
         }
-        // caption chip
-        Surface(color = Color.Black.copy(alpha = 0.55f), shape = RoundedCornerShape(50), modifier = Modifier.align(Alignment.TopStart).padding(10.dp)) {
-            Text("${pager.currentPage + 1}/${demo.frames.size} · ${demo.captions.getOrElse(pager.currentPage) { "" }}", color = Color.White, style = MaterialTheme.typography.labelMedium, modifier = Modifier.padding(horizontal = 10.dp, vertical = 4.dp), maxLines = 1, overflow = TextOverflow.Ellipsis)
+        return
+    }
+    val pager = rememberPagerState { demo.frames.size }
+    Box(modifier.fillMaxWidth().aspectRatio(DEMO_RATIO).clip(MaterialTheme.shapes.large).background(Color.Black).testTag("demo_${e.name}")) {
+        if (playing) {
+            LoopPlayer(demo.frames, "Demonstração animada de ${e.name}", Modifier.fillMaxSize(), scale = ContentScale.Crop)
+        } else {
+            HorizontalPager(pager, Modifier.fillMaxSize()) { page ->
+                DemoImage(demo.frames[page], "${e.name}: ${demo.captions.getOrElse(page) { "" }}", Modifier.fillMaxSize().clickable { onExpand(page) })
+            }
+            // caption chip
+            Surface(color = Color.Black.copy(alpha = 0.55f), shape = RoundedCornerShape(50), modifier = Modifier.align(Alignment.TopStart).padding(10.dp)) {
+                Text("${pager.currentPage + 1}/${demo.frames.size} · ${demo.captions.getOrElse(pager.currentPage) { "" }}", color = Color.White, style = MaterialTheme.typography.labelMedium, modifier = Modifier.padding(horizontal = 10.dp, vertical = 4.dp), maxLines = 1, overflow = TextOverflow.Ellipsis)
+            }
+            if (demo.frames.size > 1) PageDots(pager, demo.frames.size, Modifier.align(Alignment.BottomCenter).padding(14.dp))
         }
         Row(Modifier.align(Alignment.BottomEnd).padding(8.dp), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
             if (demo.animatable) RoundIcon(if (playing) Icons.Filled.Pause else Icons.Filled.PlayArrow, if (playing) "Pausar demonstração" else "Reproduzir demonstração", tag = "demo_play") { playing = !playing }
             RoundIcon(Icons.Filled.Fullscreen, "Ampliar", tag = "demo_expand") { onExpand(pager.currentPage) }
         }
-        if (demo.frames.size > 1) PageDots(pager, demo.frames.size, Modifier.align(Alignment.BottomCenter).padding(14.dp))
     }
 }
 
@@ -182,12 +245,14 @@ fun DemoFullscreen(e: ExerciseEntity, startPage: Int, onDismiss: () -> Unit) {
     val demo = rememberDemo(e)
     if (!demo.hasImages) { onDismiss(); return }
     Dialog(onDismissRequest = onDismiss, properties = DialogProperties(usePlatformDefaultWidth = false, decorFitsSystemWindows = false)) {
-        Surface(Modifier.fillMaxSize().testTag("demo_fullscreen"), color = Color.Black) {
+        val light = demo.isAnatomy
+        val fg = if (light) Color(0xFF111317) else Color.White
+        Surface(Modifier.fillMaxSize().testTag("demo_fullscreen"), color = if (light) AnatomyBg else Color.Black) {
             val pager = rememberPagerState(initialPage = startPage.coerceIn(0, demo.frames.lastIndex)) { demo.frames.size }
             var playing by remember { mutableStateOf(false) }
-            AutoPlay(pager, demo.frames.size, playing)
             Box(Modifier.fillMaxSize()) {
-                HorizontalPager(pager, Modifier.fillMaxSize()) { page ->
+                if (playing) LoopPlayer(demo.frames, "Demonstração animada de ${e.name}", Modifier.fillMaxSize().padding(vertical = 96.dp, horizontal = 12.dp))
+                else HorizontalPager(pager, Modifier.fillMaxSize()) { page ->
                     var scale by remember { mutableFloatStateOf(1f) }
                     var offset by remember { mutableStateOf(Offset.Zero) }
                     DemoImage(
@@ -205,17 +270,17 @@ fun DemoFullscreen(e: ExerciseEntity, startPage: Int, onDismiss: () -> Unit) {
                     )
                 }
                 Row(Modifier.fillMaxWidth().statusBarsPadding().padding(8.dp), verticalAlignment = Alignment.CenterVertically) {
-                    IconButton(onClick = onDismiss, modifier = Modifier.testTag("demo_close")) { Icon(Icons.Filled.Close, "Fechar", tint = Color.White) }
+                    IconButton(onClick = onDismiss, modifier = Modifier.testTag("demo_close")) { Icon(Icons.Filled.Close, "Fechar", tint = fg) }
                     Column(Modifier.weight(1f)) {
-                        Text(e.name, color = Color.White, style = MaterialTheme.typography.titleMedium, maxLines = 1, overflow = TextOverflow.Ellipsis)
-                        Text("${pager.currentPage + 1}/${demo.frames.size} · ${demo.captions.getOrElse(pager.currentPage) { "" }}", color = Color.White.copy(alpha = 0.8f), style = MaterialTheme.typography.bodySmall)
+                        Text(e.name, color = fg, style = MaterialTheme.typography.titleMedium, maxLines = 1, overflow = TextOverflow.Ellipsis)
+                        Text(if (playing) "Demonstração em loop" else "${pager.currentPage + 1}/${demo.frames.size} · ${demo.captions.getOrElse(pager.currentPage) { "" }}", color = fg.copy(alpha = 0.8f), style = MaterialTheme.typography.bodySmall)
                     }
-                    if (demo.animatable) IconButton(onClick = { playing = !playing }) { Icon(if (playing) Icons.Filled.Pause else Icons.Filled.PlayArrow, if (playing) "Pausar" else "Reproduzir", tint = Color.White) }
+                    if (demo.animatable) IconButton(onClick = { playing = !playing }, modifier = Modifier.testTag("fullscreen_play")) { Icon(if (playing) Icons.Filled.Pause else Icons.Filled.PlayArrow, if (playing) "Pausar" else "Reproduzir", tint = fg) }
                 }
                 Column(Modifier.align(Alignment.BottomCenter).navigationBarsPadding().padding(16.dp), horizontalAlignment = Alignment.CenterHorizontally) {
-                    if (demo.frames.size > 1) PageDots(pager, demo.frames.size)
-                    demo.credit?.let { Text(it, color = Color.White.copy(alpha = 0.6f), style = MaterialTheme.typography.labelSmall, modifier = Modifier.padding(top = 8.dp)) }
-                    Text("Pinça para ampliar · toque duplo para restaurar", color = Color.White.copy(alpha = 0.5f), style = MaterialTheme.typography.labelSmall)
+                    if (demo.frames.size > 1 && !playing) PageDots(pager, demo.frames.size, dot = if (light) Color(0xFF111317) else Color.White)
+                    demo.credit?.let { Text(it, color = fg.copy(alpha = 0.6f), style = MaterialTheme.typography.labelSmall, modifier = Modifier.padding(top = 8.dp)) }
+                    if (!playing) Text("Pinça para ampliar · toque duplo para restaurar", color = fg.copy(alpha = 0.5f), style = MaterialTheme.typography.labelSmall)
                 }
             }
         }

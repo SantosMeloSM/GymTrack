@@ -12,63 +12,75 @@
   "swapped": false
  },
  "arnold_press": {
-  "kind": "photo",
+  "kind": "anatomy",
   "frames": 2,
   "captions": [
    "Posição inicial",
    "Posição final"
   ],
-  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
-  "sourceId": "Arnold_Dumbbell_Press",
-  "license": "Unlicense (domínio público)",
+  "source": "Ilustração anatômica fornecida pelo proprietário do app",
+  "sourceId": "press_arnold_com_anatomia_muscular.png",
+  "license": "Fornecida pelo proprietário do app",
   "swapped": false
  },
  "back_extension": {
-  "kind": "photo",
+  "kind": "anatomy",
   "frames": 2,
   "captions": [
    "Posição inicial",
    "Posição final"
   ],
-  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
-  "sourceId": "Hyperextensions_Back_Extensions",
-  "license": "Unlicense (domínio público)",
+  "source": "Ilustração anatômica fornecida pelo proprietário do app",
+  "sourceId": "hiperextensão_postura_e_músculos_ativados.png",
+  "license": "Fornecida pelo proprietário do app",
   "swapped": false
  },
  "back_squat": {
-  "kind": "photo",
+  "kind": "anatomy",
   "frames": 2,
   "captions": [
    "Posição inicial",
    "Posição final"
   ],
-  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
-  "sourceId": "Barbell_Squat",
-  "license": "Unlicense (domínio público)",
+  "source": "Ilustração anatômica fornecida pelo proprietário do app",
+  "sourceId": "a_clean_high_detail_anatomical_fitness_illustrati_1_batch_1.png",
+  "license": "Fornecida pelo proprietário do app",
   "swapped": false
  },
  "barbell_curl": {
-  "kind": "photo",
+  "kind": "anatomy",
   "frames": 2,
   "captions": [
    "Posição inicial",
    "Posição final"
   ],
-  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
-  "sourceId": "Barbell_Curl",
-  "license": "Unlicense (domínio público)",
+  "source": "Ilustração anatômica fornecida pelo proprietário do app",
+  "sourceId": "rosca_direta_posição_inicial_e_contraída.png",
+  "license": "Fornecida pelo proprietário do app",
   "swapped": false
  },
  "barbell_row": {
-  "kind": "photo",
+  "kind": "anatomy",
   "frames": 2,
   "captions": [
    "Posição inicial",
    "Posição final"
   ],
-  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
-  "sourceId": "Bent_Over_Barbell_Row",
-  "license": "Unlicense (domínio público)",
+  "source": "Ilustração anatômica fornecida pelo proprietário do app",
+  "sourceId": "remada_curvada_início_e_contração.png",
+  "license": "Fornecida pelo proprietário do app",
+  "swapped": false
+ },
+ "bb_calf_raise": {
+  "kind": "anatomy",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "Ilustração anatômica fornecida pelo proprietário do app",
+  "sourceId": "elevação_de_panturrilha_com_barra.png",
+  "license": "Fornecida pelo proprietário do app",
   "swapped": false
  },
  "bench_dips": {
@@ -84,15 +96,15 @@
   "swapped": false
  },
  "bench_press": {
-  "kind": "photo",
+  "kind": "anatomy",
   "frames": 2,
   "captions": [
    "Posição inicial",
    "Posição final"
   ],
-  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
-  "sourceId": "Barbell_Bench_Press_-_Medium_Grip",
-  "license": "Unlicense (domínio público)",
+  "source": "Ilustração anatômica fornecida pelo proprietário do app",
+  "sourceId": "demonstração_do_supino_com_barra.png",
+  "license": "Fornecida pelo proprietário do app",
   "swapped": false
  },
  "bike": {
@@ -108,15 +120,15 @@
   "swapped": false
  },
  "bulgarian_split_squat": {
-  "kind": "photo",
+  "kind": "anatomy",
   "frames": 2,
   "captions": [
    "Posição inicial",
    "Posição final"
   ],
-  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
-  "sourceId": "One_Leg_Barbell_Squat",
-  "license": "Unlicense (domínio público)",
+  "source": "Ilustração anatômica fornecida pelo proprietário do app",
+  "sourceId": "agachamento_búlgaro_início_e_execução.png",
+  "license": "Fornecida pelo proprietário do app",
   "swapped": false
  },
  "burpee": {
@@ -134,27 +146,27 @@
   "swapped": false
  },
  "cable_crossover": {
-  "kind": "photo",
+  "kind": "anatomy",
   "frames": 2,
   "captions": [
    "Posição inicial",
    "Posição final"
   ],
-  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
-  "sourceId": "Cable_Crossover",
-  "license": "Unlicense (domínio público)",
+  "source": "Ilustração anatômica fornecida pelo proprietário do app",
+  "sourceId": "crossover_na_polia_abertura_e_contração.png",
+  "license": "Fornecida pelo proprietário do app",
   "swapped": false
  },
  "cable_crunch": {
-  "kind": "photo",
+  "kind": "anatomy",
   "frames": 2,
   "captions": [
    "Posição inicial",
    "Posição final"
   ],
-  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
-  "sourceId": "Cable_Crunch",
-  "license": "Unlicense (domínio público)",
+  "source": "Ilustração anatômica fornecida pelo proprietário do app",
+  "sourceId": "demonstração_do_crunch_abdominal_na_polia.png",
+  "license": "Fornecida pelo proprietário do app",
   "swapped": false
  },
  "cable_curl": {
@@ -170,27 +182,27 @@
   "swapped": false
  },
  "cable_kickback": {
-  "kind": "photo",
+  "kind": "anatomy",
   "frames": 2,
   "captions": [
    "Posição inicial",
    "Posição final"
   ],
-  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
-  "sourceId": "One-Legged_Cable_Kickback",
-  "license": "Unlicense (domínio público)",
+  "source": "Ilustração anatômica fornecida pelo proprietário do app",
+  "sourceId": "wide_fitness_illustration_diagram_scene_on_a_white_7_batch_7.png",
+  "license": "Fornecida pelo proprietário do app",
   "swapped": false
  },
  "cable_lateral_raise": {
-  "kind": "photo",
+  "kind": "anatomy",
   "frames": 2,
   "captions": [
    "Posição inicial",
    "Posição final"
   ],
-  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
-  "sourceId": "Cable_Seated_Lateral_Raise",
-  "license": "Unlicense (domínio público)",
+  "source": "Ilustração anatômica fornecida pelo proprietário do app",
+  "sourceId": "elevação_lateral_no_cabo_posição_inicial_e_final.png",
+  "license": "Fornecida pelo proprietário do app",
   "swapped": false
  },
  "chin_up": {
@@ -230,27 +242,27 @@
   "swapped": false
  },
  "concentration_curl": {
-  "kind": "photo",
+  "kind": "anatomy",
   "frames": 2,
   "captions": [
    "Posição inicial",
    "Posição final"
   ],
-  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
-  "sourceId": "Concentration_Curls",
-  "license": "Unlicense (domínio público)",
+  "source": "Ilustração anatômica fornecida pelo proprietário do app",
+  "sourceId": "rosca_concentrada_início_e_contração.png",
+  "license": "Fornecida pelo proprietário do app",
   "swapped": false
  },
  "crunch": {
-  "kind": "photo",
+  "kind": "anatomy",
   "frames": 2,
   "captions": [
    "Posição inicial",
    "Posição final"
   ],
-  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
-  "sourceId": "Crunches",
-  "license": "Unlicense (domínio público)",
+  "source": "Ilustração anatômica fornecida pelo proprietário do app",
+  "sourceId": "ilustração_anatômica_do_abdominal_crunch.png",
+  "license": "Fornecida pelo proprietário do app",
   "swapped": false
  },
  "db_bench_press": {
@@ -290,63 +302,75 @@
   "swapped": false
  },
  "db_overhead_ext": {
-  "kind": "photo",
+  "kind": "anatomy",
   "frames": 2,
   "captions": [
    "Posição inicial",
    "Posição final"
   ],
-  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
-  "sourceId": "Standing_Dumbbell_Triceps_Extension",
-  "license": "Unlicense (domínio público)",
+  "source": "Ilustração anatômica fornecida pelo proprietário do app",
+  "sourceId": "extensão_de_tríceps_sentado_com_halter.png",
+  "license": "Fornecida pelo proprietário do app",
+  "swapped": false
+ },
+ "db_pullover": {
+  "kind": "anatomy",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "Ilustração anatômica fornecida pelo proprietário do app",
+  "sourceId": "a_clean_white_background_instructional_fitness_ill_4_batch_4.png",
+  "license": "Fornecida pelo proprietário do app",
   "swapped": false
  },
  "db_romanian_deadlift": {
-  "kind": "photo",
+  "kind": "anatomy",
   "frames": 2,
   "captions": [
    "Posição inicial",
    "Posição final"
   ],
-  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
-  "sourceId": "Stiff-Legged_Dumbbell_Deadlift",
-  "license": "Unlicense (domínio público)",
+  "source": "Ilustração anatômica fornecida pelo proprietário do app",
+  "sourceId": "a_clean_white_background_anatomical_fitness_illust_3_batch_3.png",
+  "license": "Fornecida pelo proprietário do app",
   "swapped": false
  },
  "db_row": {
-  "kind": "photo",
+  "kind": "anatomy",
   "frames": 2,
   "captions": [
    "Posição inicial",
    "Posição final"
   ],
-  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
-  "sourceId": "One-Arm_Dumbbell_Row",
-  "license": "Unlicense (domínio público)",
+  "source": "Ilustração anatômica fornecida pelo proprietário do app",
+  "sourceId": "remada_unilateral_com_halteres_em_destaque_muscula.png",
+  "license": "Fornecida pelo proprietário do app",
   "swapped": false
  },
  "db_shoulder_press": {
-  "kind": "photo",
+  "kind": "anatomy",
   "frames": 2,
   "captions": [
    "Posição inicial",
    "Posição final"
   ],
-  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
-  "sourceId": "Dumbbell_Shoulder_Press",
-  "license": "Unlicense (domínio público)",
+  "source": "Ilustração anatômica fornecida pelo proprietário do app",
+  "sourceId": "comparação_do_desenvolvimento_com_halteres.png",
+  "license": "Fornecida pelo proprietário do app",
   "swapped": false
  },
  "deadlift": {
-  "kind": "photo",
+  "kind": "anatomy",
   "frames": 2,
   "captions": [
    "Posição inicial",
    "Posição final"
   ],
-  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
-  "sourceId": "Barbell_Deadlift",
-  "license": "Unlicense (domínio público)",
+  "source": "Ilustração anatômica fornecida pelo proprietário do app",
+  "sourceId": "ilustração_anatômica_do_levantamento_terra.png",
+  "license": "Fornecida pelo proprietário do app",
   "swapped": false
  },
  "decline_bench_press": {
@@ -362,39 +386,39 @@
   "swapped": false
  },
  "dips_chest": {
-  "kind": "photo",
+  "kind": "anatomy",
   "frames": 2,
   "captions": [
    "Posição inicial",
    "Posição final"
   ],
-  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
-  "sourceId": "Dips_-_Chest_Version",
-  "license": "Unlicense (domínio público)",
+  "source": "Ilustração anatômica fornecida pelo proprietário do app",
+  "sourceId": "wide_white_background_workout_illustration_a_clea_6_batch_6.png",
+  "license": "Fornecida pelo proprietário do app",
   "swapped": false
  },
  "ez_curl": {
-  "kind": "photo",
+  "kind": "anatomy",
   "frames": 2,
   "captions": [
    "Posição inicial",
    "Posição final"
   ],
-  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
-  "sourceId": "EZ-Bar_Curl",
-  "license": "Unlicense (domínio público)",
+  "source": "Ilustração anatômica fornecida pelo proprietário do app",
+  "sourceId": "a_clean_white_background_anatomical_fitness_illust_7_batch_7.png",
+  "license": "Fornecida pelo proprietário do app",
   "swapped": false
  },
  "face_pull": {
-  "kind": "photo",
+  "kind": "anatomy",
   "frames": 2,
   "captions": [
    "Posição inicial",
    "Posição final"
   ],
-  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
-  "sourceId": "Face_Pull",
-  "license": "Unlicense (domínio público)",
+  "source": "Ilustração anatômica fornecida pelo proprietário do app",
+  "sourceId": "execução_do_face_pull_com_anatomia_muscular.png",
+  "license": "Fornecida pelo proprietário do app",
   "swapped": false
  },
  "farmer_walk": {
@@ -410,27 +434,27 @@
   "swapped": false
  },
  "front_raise": {
-  "kind": "photo",
+  "kind": "anatomy",
   "frames": 2,
   "captions": [
    "Posição inicial",
    "Posição final"
   ],
-  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
-  "sourceId": "Front_Dumbbell_Raise",
-  "license": "Unlicense (domínio público)",
+  "source": "Ilustração anatômica fornecida pelo proprietário do app",
+  "sourceId": "elevação_frontal_com_halteres_início_e_execução.png",
+  "license": "Fornecida pelo proprietário do app",
   "swapped": false
  },
  "front_squat": {
-  "kind": "photo",
+  "kind": "anatomy",
   "frames": 2,
   "captions": [
    "Posição inicial",
    "Posição final"
   ],
-  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
-  "sourceId": "Front_Barbell_Squat",
-  "license": "Unlicense (domínio público)",
+  "source": "Ilustração anatômica fornecida pelo proprietário do app",
+  "sourceId": "anatomia_do_agachamento_frontal.png",
+  "license": "Fornecida pelo proprietário do app",
   "swapped": false
  },
  "glute_bridge": {
@@ -458,39 +482,39 @@
   "swapped": false
  },
  "good_morning": {
-  "kind": "photo",
+  "kind": "anatomy",
   "frames": 2,
   "captions": [
    "Posição inicial",
    "Posição final"
   ],
-  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
-  "sourceId": "Good_Morning",
-  "license": "Unlicense (domínio público)",
+  "source": "Ilustração anatômica fornecida pelo proprietário do app",
+  "sourceId": "a_clean_white_background_fitness_anatomy_illustrat_8_batch_8.png",
+  "license": "Fornecida pelo proprietário do app",
   "swapped": false
  },
  "hack_squat": {
-  "kind": "photo",
+  "kind": "anatomy",
   "frames": 2,
   "captions": [
    "Posição inicial",
    "Posição final"
   ],
-  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
-  "sourceId": "Hack_Squat",
-  "license": "Unlicense (domínio público)",
+  "source": "Ilustração anatômica fornecida pelo proprietário do app",
+  "sourceId": "comparação_do_hack_squat_em_duas_posições.png",
+  "license": "Fornecida pelo proprietário do app",
   "swapped": false
  },
  "hammer_curl": {
-  "kind": "photo",
+  "kind": "anatomy",
   "frames": 2,
   "captions": [
    "Posição inicial",
    "Posição final"
   ],
-  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
-  "sourceId": "Hammer_Curls",
-  "license": "Unlicense (domínio público)",
+  "source": "Ilustração anatômica fornecida pelo proprietário do app",
+  "sourceId": "ilustração_anatômica_da_rosca_martelo.png",
+  "license": "Fornecida pelo proprietário do app",
   "swapped": false
  },
  "hanging_leg_raise": {
@@ -506,39 +530,39 @@
   "swapped": false
  },
  "hip_abduction": {
-  "kind": "photo",
+  "kind": "anatomy",
   "frames": 2,
   "captions": [
    "Posição inicial",
    "Posição final"
   ],
-  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
-  "sourceId": "Thigh_Abductor",
-  "license": "Unlicense (domínio público)",
+  "source": "Ilustração anatômica fornecida pelo proprietário do app",
+  "sourceId": "abdução_de_quadril_na_máquina_início_e_final.png",
+  "license": "Fornecida pelo proprietário do app",
   "swapped": false
  },
  "hip_adduction": {
-  "kind": "photo",
+  "kind": "anatomy",
   "frames": 2,
   "captions": [
    "Posição inicial",
    "Posição final"
   ],
-  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
-  "sourceId": "Thigh_Adductor",
-  "license": "Unlicense (domínio público)",
+  "source": "Ilustração anatômica fornecida pelo proprietário do app",
+  "sourceId": "addução_de_quadril_início_e_contração.png",
+  "license": "Fornecida pelo proprietário do app",
   "swapped": false
  },
  "hip_thrust": {
-  "kind": "photo",
+  "kind": "anatomy",
   "frames": 2,
   "captions": [
    "Posição inicial",
    "Posição final"
   ],
-  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
-  "sourceId": "Barbell_Hip_Thrust",
-  "license": "Unlicense (domínio público)",
+  "source": "Ilustração anatômica fornecida pelo proprietário do app",
+  "sourceId": "ilustração_anatômica_do_hip_thrust_em_duas_posiçõe.png",
+  "license": "Fornecida pelo proprietário do app",
   "swapped": false
  },
  "incline_bench_press": {
@@ -554,39 +578,39 @@
   "swapped": false
  },
  "incline_db_curl": {
-  "kind": "photo",
+  "kind": "anatomy",
   "frames": 2,
   "captions": [
    "Posição inicial",
    "Posição final"
   ],
-  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
-  "sourceId": "Incline_Dumbbell_Curl",
-  "license": "Unlicense (domínio público)",
+  "source": "Ilustração anatômica fornecida pelo proprietário do app",
+  "sourceId": "wide_clean_white_background_anatomical_fitness_ill_7_batch_7.png",
+  "license": "Fornecida pelo proprietário do app",
   "swapped": false
  },
  "incline_db_fly": {
-  "kind": "photo",
+  "kind": "anatomy",
   "frames": 2,
   "captions": [
    "Posição inicial",
    "Posição final"
   ],
-  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
-  "sourceId": "Incline_Dumbbell_Flyes",
-  "license": "Unlicense (domínio público)",
+  "source": "Ilustração anatômica fornecida pelo proprietário do app",
+  "sourceId": "a_clean_medical_fitness_illustration_on_a_white_ba_4_batch_4.png",
+  "license": "Fornecida pelo proprietário do app",
   "swapped": false
  },
  "incline_db_press": {
-  "kind": "photo",
+  "kind": "anatomy",
   "frames": 2,
   "captions": [
    "Posição inicial",
    "Posição final"
   ],
-  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
-  "sourceId": "Incline_Dumbbell_Press",
-  "license": "Unlicense (domínio público)",
+  "source": "Ilustração anatômica fornecida pelo proprietário do app",
+  "sourceId": "supino_inclinado_com_halteres_movimento_completo.png",
+  "license": "Fornecida pelo proprietário do app",
   "swapped": false
  },
  "kb_swing": {
@@ -602,51 +626,51 @@
   "swapped": false
  },
  "lat_pulldown": {
-  "kind": "photo",
+  "kind": "anatomy",
   "frames": 2,
   "captions": [
    "Posição inicial",
    "Posição final"
   ],
-  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
-  "sourceId": "Wide-Grip_Lat_Pulldown",
-  "license": "Unlicense (domínio público)",
+  "source": "Ilustração anatômica fornecida pelo proprietário do app",
+  "sourceId": "anatomia_do_pulldown_na_barra.png",
+  "license": "Fornecida pelo proprietário do app",
   "swapped": false
  },
  "lateral_raise": {
-  "kind": "photo",
+  "kind": "anatomy",
   "frames": 2,
   "captions": [
    "Posição inicial",
    "Posição final"
   ],
-  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
-  "sourceId": "Side_Lateral_Raise",
-  "license": "Unlicense (domínio público)",
+  "source": "Ilustração anatômica fornecida pelo proprietário do app",
+  "sourceId": "elevação_lateral_com_halteres_anatomia_muscular.png",
+  "license": "Fornecida pelo proprietário do app",
   "swapped": false
  },
  "leg_extension": {
-  "kind": "photo",
+  "kind": "anatomy",
   "frames": 2,
   "captions": [
    "Posição inicial",
    "Posição final"
   ],
-  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
-  "sourceId": "Leg_Extensions",
-  "license": "Unlicense (domínio público)",
+  "source": "Ilustração anatômica fornecida pelo proprietário do app",
+  "sourceId": "extensão_de_pernas_início_e_contração.png",
+  "license": "Fornecida pelo proprietário do app",
   "swapped": false
  },
  "leg_press": {
-  "kind": "photo",
+  "kind": "anatomy",
   "frames": 2,
   "captions": [
    "Posição inicial",
    "Posição final"
   ],
-  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
-  "sourceId": "Leg_Press",
-  "license": "Unlicense (domínio público)",
+  "source": "Ilustração anatômica fornecida pelo proprietário do app",
+  "sourceId": "ilustração_anatômica_do_leg_press_45.png",
+  "license": "Fornecida pelo proprietário do app",
   "swapped": false
  },
  "leg_press_calf": {
@@ -662,27 +686,27 @@
   "swapped": false
  },
  "lunge": {
-  "kind": "photo",
+  "kind": "anatomy",
   "frames": 2,
   "captions": [
    "Posição inicial",
    "Posição final"
   ],
-  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
-  "sourceId": "Dumbbell_Lunges",
-  "license": "Unlicense (domínio público)",
+  "source": "Ilustração anatômica fornecida pelo proprietário do app",
+  "sourceId": "avanço_com_halteres_músculos_ativados.png",
+  "license": "Fornecida pelo proprietário do app",
   "swapped": false
  },
  "lying_leg_curl": {
-  "kind": "photo",
+  "kind": "anatomy",
   "frames": 2,
   "captions": [
    "Posição inicial",
    "Posição final"
   ],
-  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
-  "sourceId": "Lying_Leg_Curls",
-  "license": "Unlicense (domínio público)",
+  "source": "Ilustração anatômica fornecida pelo proprietário do app",
+  "sourceId": "a_clean_high_detail_fitness_anatomy_illustration_1_batch_1.png",
+  "license": "Fornecida pelo proprietário do app",
   "swapped": false
  },
  "lying_leg_raise": {
@@ -710,15 +734,15 @@
   "swapped": false
  },
  "machine_crunch": {
-  "kind": "photo",
+  "kind": "anatomy",
   "frames": 2,
   "captions": [
    "Posição inicial",
    "Posição final"
   ],
-  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
-  "sourceId": "Ab_Crunch_Machine",
-  "license": "Unlicense (domínio público)",
+  "source": "Ilustração anatômica fornecida pelo proprietário do app",
+  "sourceId": "demonstração_do_abdominal_na_máquina.png",
+  "license": "Fornecida pelo proprietário do app",
   "swapped": false
  },
  "machine_lateral_raise": {
@@ -758,27 +782,39 @@
   "swapped": false
  },
  "nordic_curl": {
-  "kind": "photo",
+  "kind": "anatomy",
   "frames": 2,
   "captions": [
    "Posição inicial",
    "Posição final"
   ],
-  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
-  "sourceId": "Natural_Glute_Ham_Raise",
-  "license": "Unlicense (domínio público)",
+  "source": "Ilustração anatômica fornecida pelo proprietário do app",
+  "sourceId": "curl_nórdico_foco_em_posteriores_da_coxa.png",
+  "license": "Fornecida pelo proprietário do app",
+  "swapped": false
+ },
+ "one_arm_overhead_ext": {
+  "kind": "anatomy",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "Ilustração anatômica fornecida pelo proprietário do app",
+  "sourceId": "a_clean_white_background_high_contrast_gym_anatom_6_batch_6.png",
+  "license": "Fornecida pelo proprietário do app",
   "swapped": false
  },
  "overhead_press": {
-  "kind": "photo",
+  "kind": "anatomy",
   "frames": 2,
   "captions": [
    "Posição inicial",
    "Posição final"
   ],
-  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
-  "sourceId": "Standing_Military_Press",
-  "license": "Unlicense (domínio público)",
+  "source": "Ilustração anatômica fornecida pelo proprietário do app",
+  "sourceId": "ilustração_anatômica_do_desenvolvimento_com_barra.png",
+  "license": "Fornecida pelo proprietário do app",
   "swapped": false
  },
  "overhead_triceps_cable": {
@@ -842,27 +878,27 @@
   "swapped": false
  },
  "preacher_curl": {
-  "kind": "photo",
+  "kind": "anatomy",
   "frames": 2,
   "captions": [
    "Posição inicial",
    "Posição final"
   ],
-  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
-  "sourceId": "Preacher_Curl",
-  "license": "Unlicense (domínio público)",
+  "source": "Ilustração anatômica fornecida pelo proprietário do app",
+  "sourceId": "rosca_scott_posições_inicial_e_contraída.png",
+  "license": "Fornecida pelo proprietário do app",
   "swapped": false
  },
  "pull_up": {
-  "kind": "photo",
+  "kind": "anatomy",
   "frames": 2,
   "captions": [
    "Posição inicial",
    "Posição final"
   ],
-  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
-  "sourceId": "Pullups",
-  "license": "Unlicense (domínio público)",
+  "source": "Ilustração anatômica fornecida pelo proprietário do app",
+  "sourceId": "ilustração_anatômica_do_pull_up_em_duas_fases.png",
+  "license": "Fornecida pelo proprietário do app",
   "swapped": false
  },
  "push_up": {
@@ -914,28 +950,28 @@
   "swapped": false
  },
  "reverse_pec_deck": {
-  "kind": "photo",
+  "kind": "anatomy",
   "frames": 2,
   "captions": [
    "Posição inicial",
    "Posição final"
   ],
-  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
-  "sourceId": "Reverse_Machine_Flyes",
-  "license": "Unlicense (domínio público)",
+  "source": "Ilustração anatômica fornecida pelo proprietário do app",
+  "sourceId": "wide_clean_instructional_fitness_illustration_on_2_batch_2.png",
+  "license": "Fornecida pelo proprietário do app",
   "swapped": false
  },
  "romanian_deadlift": {
-  "kind": "photo",
+  "kind": "anatomy",
   "frames": 2,
   "captions": [
    "Posição inicial",
    "Posição final"
   ],
-  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
-  "sourceId": "Romanian_Deadlift",
-  "license": "Unlicense (domínio público)",
-  "swapped": true
+  "source": "Ilustração anatômica fornecida pelo proprietário do app",
+  "sourceId": "wide_clean_instructional_fitness_illustration_on_w_2_batch_2.png",
+  "license": "Fornecida pelo proprietário do app",
+  "swapped": false
  },
  "rowing_machine": {
   "kind": "photo",
@@ -962,39 +998,39 @@
   "swapped": false
  },
  "seated_cable_row": {
-  "kind": "photo",
+  "kind": "anatomy",
   "frames": 2,
   "captions": [
    "Posição inicial",
    "Posição final"
   ],
-  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
-  "sourceId": "Seated_Cable_Rows",
-  "license": "Unlicense (domínio público)",
+  "source": "Ilustração anatômica fornecida pelo proprietário do app",
+  "sourceId": "remada_sentada_início_e_contração.png",
+  "license": "Fornecida pelo proprietário do app",
   "swapped": false
  },
  "seated_calf_raise": {
-  "kind": "photo",
+  "kind": "anatomy",
   "frames": 2,
   "captions": [
    "Posição inicial",
    "Posição final"
   ],
-  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
-  "sourceId": "Seated_Calf_Raise",
-  "license": "Unlicense (domínio público)",
+  "source": "Ilustração anatômica fornecida pelo proprietário do app",
+  "sourceId": "a_clean_high_detail_instructional_fitness_illustr_8_batch_8.png",
+  "license": "Fornecida pelo proprietário do app",
   "swapped": false
  },
  "seated_leg_curl": {
-  "kind": "photo",
+  "kind": "anatomy",
   "frames": 2,
   "captions": [
    "Posição inicial",
    "Posição final"
   ],
-  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
-  "sourceId": "Seated_Leg_Curl",
-  "license": "Unlicense (domínio público)",
+  "source": "Ilustração anatômica fornecida pelo proprietário do app",
+  "sourceId": "rosca_femoral_sentada_início_e_contração.png",
+  "license": "Fornecida pelo proprietário do app",
   "swapped": false
  },
  "shrug_bb": {
@@ -1010,15 +1046,15 @@
   "swapped": false
  },
  "shrug_db": {
-  "kind": "photo",
+  "kind": "anatomy",
   "frames": 2,
   "captions": [
    "Posição inicial",
    "Posição final"
   ],
-  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
-  "sourceId": "Dumbbell_Shrug",
-  "license": "Unlicense (domínio público)",
+  "source": "Ilustração anatômica fornecida pelo proprietário do app",
+  "sourceId": "a_clean_white_background_anatomical_fitness_illust_5_batch_5.png",
+  "license": "Fornecida pelo proprietário do app",
   "swapped": false
  },
  "side_plank": {
@@ -1031,6 +1067,18 @@
   "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
   "sourceId": "Side_Bridge",
   "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "single_arm_pulldown": {
+  "kind": "anatomy",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "Ilustração anatômica fornecida pelo proprietário do app",
+  "sourceId": "a_clean_white_background_instructional_fitness_med_8_batch_8.png",
+  "license": "Fornecida pelo proprietário do app",
   "swapped": false
  },
  "sissy_squat": {
@@ -1046,15 +1094,15 @@
   "swapped": false
  },
  "skull_crusher": {
-  "kind": "photo",
+  "kind": "anatomy",
   "frames": 2,
   "captions": [
    "Posição inicial",
    "Posição final"
   ],
-  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
-  "sourceId": "EZ-Bar_Skullcrusher",
-  "license": "Unlicense (domínio público)",
+  "source": "Ilustração anatômica fornecida pelo proprietário do app",
+  "sourceId": "wide_clean_gym_illustration_anatomy_exercise_di_6_batch_6.png",
+  "license": "Fornecida pelo proprietário do app",
   "swapped": false
  },
  "smith_incline_press": {
@@ -1070,63 +1118,87 @@
   "swapped": false
  },
  "smith_squat": {
-  "kind": "photo",
+  "kind": "anatomy",
   "frames": 2,
   "captions": [
    "Posição inicial",
    "Posição final"
   ],
-  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
-  "sourceId": "Smith_Machine_Squat",
-  "license": "Unlicense (domínio público)",
-  "swapped": true
+  "source": "Ilustração anatômica fornecida pelo proprietário do app",
+  "sourceId": "wide_clean_white_background_fitness_illustration_9_batch_9.png",
+  "license": "Fornecida pelo proprietário do app",
+  "swapped": false
+ },
+ "spider_curl": {
+  "kind": "anatomy",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "Ilustração anatômica fornecida pelo proprietário do app",
+  "sourceId": "rosca_spider_com_barra_ez_em_duas_fases.png",
+  "license": "Fornecida pelo proprietário do app",
+  "swapped": false
  },
  "standing_calf_raise": {
-  "kind": "photo",
+  "kind": "anatomy",
   "frames": 2,
   "captions": [
    "Posição inicial",
    "Posição final"
   ],
-  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
-  "sourceId": "Standing_Calf_Raises",
-  "license": "Unlicense (domínio público)",
+  "source": "Ilustração anatômica fornecida pelo proprietário do app",
+  "sourceId": "elevação_de_panturrilha_na_máquina.png",
+  "license": "Fornecida pelo proprietário do app",
   "swapped": false
  },
  "step_up": {
-  "kind": "photo",
+  "kind": "anatomy",
   "frames": 2,
   "captions": [
    "Posição inicial",
    "Posição final"
   ],
-  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
-  "sourceId": "Dumbbell_Step_Ups",
-  "license": "Unlicense (domínio público)",
+  "source": "Ilustração anatômica fornecida pelo proprietário do app",
+  "sourceId": "step_up_com_halteres_e_anatomia_muscular.png",
+  "license": "Fornecida pelo proprietário do app",
   "swapped": false
  },
  "straight_arm_pulldown": {
-  "kind": "photo",
+  "kind": "anatomy",
   "frames": 2,
   "captions": [
    "Posição inicial",
    "Posição final"
   ],
-  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
-  "sourceId": "Straight-Arm_Pulldown",
-  "license": "Unlicense (domínio público)",
+  "source": "Ilustração anatômica fornecida pelo proprietário do app",
+  "sourceId": "pulldown_com_braços_estendidos_início_e_contração.png",
+  "license": "Fornecida pelo proprietário do app",
+  "swapped": false
+ },
+ "sumo_db_squat": {
+  "kind": "anatomy",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "Ilustração anatômica fornecida pelo proprietário do app",
+  "sourceId": "agachamento_sumô_com_halter_destacando_músculos.png",
+  "license": "Fornecida pelo proprietário do app",
   "swapped": false
  },
  "tbar_row": {
-  "kind": "photo",
+  "kind": "anatomy",
   "frames": 2,
   "captions": [
    "Posição inicial",
    "Posição final"
   ],
-  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
-  "sourceId": "Lying_T-Bar_Row",
-  "license": "Unlicense (domínio público)",
+  "source": "Ilustração anatômica fornecida pelo proprietário do app",
+  "sourceId": "a_clean_white_background_high_detail_anatomical_f_10_batch_10.png",
+  "license": "Fornecida pelo proprietário do app",
   "swapped": false
  },
  "thruster": {
@@ -1154,39 +1226,39 @@
   "swapped": false
  },
  "triceps_kickback": {
-  "kind": "photo",
+  "kind": "anatomy",
   "frames": 2,
   "captions": [
    "Posição inicial",
    "Posição final"
   ],
-  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
-  "sourceId": "Tricep_Dumbbell_Kickback",
-  "license": "Unlicense (domínio público)",
+  "source": "Ilustração anatômica fornecida pelo proprietário do app",
+  "sourceId": "anatomia_do_tríceps_coice_com_halter.png",
+  "license": "Fornecida pelo proprietário do app",
   "swapped": false
  },
  "triceps_pushdown": {
-  "kind": "photo",
+  "kind": "anatomy",
   "frames": 2,
   "captions": [
    "Posição inicial",
    "Posição final"
   ],
-  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
-  "sourceId": "Triceps_Pushdown",
-  "license": "Unlicense (domínio público)",
+  "source": "Ilustração anatômica fornecida pelo proprietário do app",
+  "sourceId": "pushdown_de_tríceps_posições_inicial_e_final.png",
+  "license": "Fornecida pelo proprietário do app",
   "swapped": false
  },
  "triceps_rope": {
-  "kind": "photo",
+  "kind": "anatomy",
   "frames": 2,
   "captions": [
    "Posição inicial",
    "Posição final"
   ],
-  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
-  "sourceId": "Triceps_Pushdown_-_Rope_Attachment",
-  "license": "Unlicense (domínio público)",
+  "source": "Ilustração anatômica fornecida pelo proprietário do app",
+  "sourceId": "ilustração_anatômica_do_tríceps_na_polia.png",
+  "license": "Fornecida pelo proprietário do app",
   "swapped": false
  },
  "upright_row": {
