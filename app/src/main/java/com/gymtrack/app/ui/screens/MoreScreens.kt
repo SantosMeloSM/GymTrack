@@ -27,6 +27,7 @@ import androidx.compose.material.icons.outlined.Delete
 import androidx.compose.material.icons.outlined.Flag
 import androidx.compose.material.icons.outlined.History
 import androidx.compose.material.icons.outlined.Info
+import androidx.compose.material.icons.outlined.Image
 import androidx.compose.material.icons.outlined.MonitorWeight
 import androidx.compose.material.icons.outlined.Settings
 import androidx.compose.material3.AlertDialog
@@ -92,6 +93,24 @@ import kotlinx.coroutines.launch
 
 @Composable
 fun MoreScreen(nav: NavController) {
+    var credits by remember { mutableStateOf(false) }
+    val media = appContainer().media
+    if (credits) {
+        val photos = media.manifest.values.count { it.kind == "photo" }
+        val illus = media.manifest.values.count { it.kind == "illustration" }
+        AlertDialog(
+            onDismissRequest = { credits = false },
+            title = { Text("Créditos das imagens") },
+            text = {
+                Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
+                    Text("Fotos de demonstração ($photos exercícios, posições inicial e final): Free Exercise DB — github.com/yuhonas/free-exercise-db, derivado de github.com/wrkout/exercises.json. Publicadas em domínio público (The Unlicense).", style = MaterialTheme.typography.bodyMedium)
+                    Text("Ilustrações ($illus exercícios sem foto correspondente): criadas originalmente para o GymTrack.", style = MaterialTheme.typography.bodyMedium)
+                    Text("Todas as imagens estão incluídas no aplicativo e funcionam sem internet. Imagens que você adiciona aos seus exercícios ficam apenas neste aparelho.", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                }
+            },
+            confirmButton = { TextButton(onClick = { credits = false }) { Text("Fechar") } },
+        )
+    }
     GtScaffold("Mais", isTab = true) { pad ->
         LazyColumn(Modifier.fillMaxSize(), contentPadding = PaddingValues(start = 16.dp, end = 16.dp, top = pad.calculateTopPadding(), bottom = 24.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {
             item {
@@ -110,6 +129,11 @@ fun MoreScreen(nav: NavController) {
                     ListRow("Backup e exportação", subtitle = "Backup local, importação, PDF e CSV", icon = Icons.Outlined.Backup, onClick = { nav.navigate(Routes.BACKUP) }, trailing = { Chevron() })
                     HorizontalDivider(color = MaterialTheme.colorScheme.outlineVariant)
                     ListRow("Configurações", subtitle = "Tema, descanso, vibração, 1RM", icon = Icons.Outlined.Settings, onClick = { nav.navigate(Routes.SETTINGS) }, trailing = { Chevron() })
+                }
+            }
+            item {
+                GtCard(contentPadding = PaddingValues(0.dp)) {
+                    ListRow("Créditos das imagens", subtitle = "Origem e licença das demonstrações", icon = Icons.Outlined.Image, onClick = { credits = true }, trailing = { Chevron() })
                 }
             }
             item {

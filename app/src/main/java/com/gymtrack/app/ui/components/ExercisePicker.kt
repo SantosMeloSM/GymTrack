@@ -124,6 +124,8 @@ fun ExercisePickerDialog(
                             }.padding(horizontal = 16.dp, vertical = 12.dp).testTag("pick_${e.name}"),
                             verticalAlignment = Alignment.CenterVertically,
                         ) {
+                            ExerciseThumb(e, width = 66.dp)
+                            Spacer(Modifier.width(12.dp))
                             Column(Modifier.weight(1f)) {
                                 Row(verticalAlignment = Alignment.CenterVertically) {
                                     Text(e.name, style = MaterialTheme.typography.titleMedium)

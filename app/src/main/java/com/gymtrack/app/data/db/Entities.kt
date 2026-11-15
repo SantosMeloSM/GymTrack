@@ -24,6 +24,11 @@ data class ExerciseEntity(
     val archived: Boolean = false,
     /** Stable key for seeded exercises; null for custom ones. */
     val seedKey: String? = null,
+    /** Common technique mistakes (shown on the detail screen). */
+    @ColumnInfo(defaultValue = "") val mistakes: String = "",
+    /** User images (file names in the app's private exercise_images dir); override bundled media. */
+    val imageStart: String? = null,
+    val imageEnd: String? = null,
 )
 
 @Serializable

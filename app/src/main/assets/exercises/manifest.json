@@ -1,0 +1,1216 @@
+{
+ "ab_wheel": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Ab_Roller",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "arnold_press": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Arnold_Dumbbell_Press",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "back_extension": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Hyperextensions_Back_Extensions",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "back_squat": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Barbell_Squat",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "barbell_curl": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Barbell_Curl",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "barbell_row": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Bent_Over_Barbell_Row",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "bench_dips": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Bench_Dips",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "bench_press": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Barbell_Bench_Press_-_Medium_Grip",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "bike": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Bicycling_Stationary",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "bulgarian_split_squat": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "One_Leg_Barbell_Squat",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "burpee": {
+  "kind": "illustration",
+  "frames": 4,
+  "captions": [
+   "1. Em pé",
+   "2. Agache e apoie as mãos no chão",
+   "3. Pernas para trás: prancha / flexão",
+   "4. Volte e salte com os braços acima da cabeça"
+  ],
+  "source": "Ilustração original criada para o GymTrack",
+  "sourceId": null,
+  "license": "Própria (GymTrack)",
+  "swapped": false
+ },
+ "cable_crossover": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Cable_Crossover",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "cable_crunch": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Cable_Crunch",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "cable_curl": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Standing_Biceps_Cable_Curl",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "cable_kickback": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "One-Legged_Cable_Kickback",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "cable_lateral_raise": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Cable_Seated_Lateral_Raise",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "chin_up": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Chin-Up",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "close_grip_bench": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Close-Grip_Barbell_Bench_Press",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "close_grip_pulldown": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "V-Bar_Pulldown",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "concentration_curl": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Concentration_Curls",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "crunch": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Crunches",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "db_bench_press": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Dumbbell_Bench_Press",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "db_curl": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Dumbbell_Alternate_Bicep_Curl",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "db_fly": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Dumbbell_Flyes",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "db_overhead_ext": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Standing_Dumbbell_Triceps_Extension",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "db_romanian_deadlift": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Stiff-Legged_Dumbbell_Deadlift",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "db_row": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "One-Arm_Dumbbell_Row",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "db_shoulder_press": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Dumbbell_Shoulder_Press",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "deadlift": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Barbell_Deadlift",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "decline_bench_press": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Decline_Barbell_Bench_Press",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "dips_chest": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Dips_-_Chest_Version",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "ez_curl": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "EZ-Bar_Curl",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "face_pull": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Face_Pull",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "farmer_walk": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Farmers_Walk",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "front_raise": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Front_Dumbbell_Raise",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "front_squat": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Front_Barbell_Squat",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "glute_bridge": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Butt_Lift_Bridge",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "goblet_squat": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Goblet_Squat",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "good_morning": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Good_Morning",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "hack_squat": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Hack_Squat",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "hammer_curl": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Hammer_Curls",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "hanging_leg_raise": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Hanging_Leg_Raise",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "hip_abduction": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Thigh_Abductor",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "hip_adduction": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Thigh_Adductor",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "hip_thrust": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Barbell_Hip_Thrust",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "incline_bench_press": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Barbell_Incline_Bench_Press_-_Medium_Grip",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "incline_db_curl": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Incline_Dumbbell_Curl",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "incline_db_fly": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Incline_Dumbbell_Flyes",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "incline_db_press": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Incline_Dumbbell_Press",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "kb_swing": {
+  "kind": "illustration",
+  "frames": 2,
+  "captions": [
+   "Início: quadril para trás, kettlebell entre as pernas",
+   "Fim: quadril estendido, kettlebell na altura do peito"
+  ],
+  "source": "Ilustração original criada para o GymTrack",
+  "sourceId": null,
+  "license": "Própria (GymTrack)",
+  "swapped": false
+ },
+ "lat_pulldown": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Wide-Grip_Lat_Pulldown",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "lateral_raise": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Side_Lateral_Raise",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "leg_extension": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Leg_Extensions",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "leg_press": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Leg_Press",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "leg_press_calf": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Calf_Press_On_The_Leg_Press_Machine",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "lunge": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Dumbbell_Lunges",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "lying_leg_curl": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Lying_Leg_Curls",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "lying_leg_raise": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Flat_Bench_Lying_Leg_Raise",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "machine_chest_press": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Machine_Bench_Press",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "machine_crunch": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Ab_Crunch_Machine",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "machine_lateral_raise": {
+  "kind": "illustration",
+  "frames": 2,
+  "captions": [
+   "Início: braços ao lado do corpo, apoios nos braços",
+   "Fim: braços elevados até a altura dos ombros"
+  ],
+  "source": "Ilustração original criada para o GymTrack",
+  "sourceId": null,
+  "license": "Própria (GymTrack)",
+  "swapped": false
+ },
+ "machine_row": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Leverage_Iso_Row",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "machine_shoulder_press": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Machine_Shoulder_Military_Press",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "nordic_curl": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Natural_Glute_Ham_Raise",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "overhead_press": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Standing_Military_Press",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "overhead_triceps_cable": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Cable_Rope_Overhead_Triceps_Extension",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "pallof_press": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Pallof_Press",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "pec_deck": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Butterfly",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "plank": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Plank",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "power_clean": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Power_Clean",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "preacher_curl": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Preacher_Curl",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "pull_up": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Pullups",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "push_up": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Pushups",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "rack_pull": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Rack_Pulls",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "rear_delt_fly": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Seated_Bent-Over_Rear_Delt_Raise",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "reverse_curl": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Reverse_Barbell_Curl",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "reverse_pec_deck": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Reverse_Machine_Flyes",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "romanian_deadlift": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Romanian_Deadlift",
+  "license": "Unlicense (domínio público)",
+  "swapped": true
+ },
+ "rowing_machine": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Rowing_Stationary",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "russian_twist": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Russian_Twist",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "seated_cable_row": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Seated_Cable_Rows",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "seated_calf_raise": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Seated_Calf_Raise",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "seated_leg_curl": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Seated_Leg_Curl",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "shrug_bb": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Barbell_Shrug",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "shrug_db": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Dumbbell_Shrug",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "side_plank": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Side_Bridge",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "sissy_squat": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Weighted_Sissy_Squat",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "skull_crusher": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "EZ-Bar_Skullcrusher",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "smith_incline_press": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Smith_Machine_Incline_Bench_Press",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "smith_squat": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Smith_Machine_Squat",
+  "license": "Unlicense (domínio público)",
+  "swapped": true
+ },
+ "standing_calf_raise": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Standing_Calf_Raises",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "step_up": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Dumbbell_Step_Ups",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "straight_arm_pulldown": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Straight-Arm_Pulldown",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "tbar_row": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Lying_T-Bar_Row",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "thruster": {
+  "kind": "illustration",
+  "frames": 2,
+  "captions": [
+   "Início: agachamento frontal, barra apoiada nos ombros",
+   "Fim: em pé, barra estendida acima da cabeça"
+  ],
+  "source": "Ilustração original criada para o GymTrack",
+  "sourceId": null,
+  "license": "Própria (GymTrack)",
+  "swapped": false
+ },
+ "treadmill": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Running_Treadmill",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "triceps_kickback": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Tricep_Dumbbell_Kickback",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "triceps_pushdown": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Triceps_Pushdown",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "triceps_rope": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Triceps_Pushdown_-_Rope_Attachment",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ },
+ "upright_row": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Upright_Barbell_Row",
+  "license": "Unlicense (domínio público)",
+  "swapped": true
+ },
+ "wrist_curl": {
+  "kind": "photo",
+  "frames": 2,
+  "captions": [
+   "Posição inicial",
+   "Posição final"
+  ],
+  "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
+  "sourceId": "Seated_Palm-Up_Barbell_Wrist_Curl",
+  "license": "Unlicense (domínio público)",
+  "swapped": false
+ }
+}

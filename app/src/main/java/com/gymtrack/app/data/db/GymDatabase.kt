@@ -4,6 +4,8 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.room.migration.Migration
+import androidx.sqlite.db.SupportSQLiteDatabase
 
 @Database(
     entities = [
@@ -11,7 +13,7 @@ import androidx.room.RoomDatabase
         SessionEntity::class, SessionExerciseEntity::class, SetEntity::class,
         BodyMeasurementEntity::class, ProgressPhotoEntity::class, GoalEntity::class, ReminderEntity::class,
     ],
-    version = 1,
+    version = 2,
     exportSchema = true,
 )
 abstract class GymDatabase : RoomDatabase() {
@@ -29,6 +31,16 @@ abstract class GymDatabase : RoomDatabase() {
             Room.databaseBuilder(context, GymDatabase::class.java, NAME)
                 // WAL + synchronous writes: every set is persisted as soon as it is logged.
                 .setJournalMode(JournalMode.WRITE_AHEAD_LOGGING)
+                .addMigrations(MIGRATION_1_2)
                 .build()
+    }
+}
+
+/** v1 -> v2: exercise images and common mistakes. Purely additive: no data is touched. */
+val MIGRATION_1_2 = object : Migration(1, 2) {
+    override fun migrate(db: SupportSQLiteDatabase) {
+        db.execSQL("ALTER TABLE exercises ADD COLUMN mistakes TEXT NOT NULL DEFAULT ''")
+        db.execSQL("ALTER TABLE exercises ADD COLUMN imageStart TEXT")
+        db.execSQL("ALTER TABLE exercises ADD COLUMN imageEnd TEXT")
     }
 }

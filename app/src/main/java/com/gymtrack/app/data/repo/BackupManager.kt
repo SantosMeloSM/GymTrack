@@ -50,7 +50,12 @@ data class BackupData(
 
 data class BackupInfo(val file: File, val createdAt: Long, val sizeBytes: Long)
 
-class BackupManager(private val context: Context, private val db: GymDatabase, private val photosDir: () -> File) {
+class BackupManager(
+    private val context: Context,
+    private val db: GymDatabase,
+    private val photosDir: () -> File,
+    private val exerciseImagesDir: () -> File = { File(context.filesDir, "exercise_images").apply { mkdirs() } },
+) {
     private val json = Json { ignoreUnknownKeys = true; encodeDefaults = true }
     private val autoDir get() = File(context.filesDir, "backups").apply { mkdirs() }
 
@@ -89,6 +94,10 @@ class BackupManager(private val context: Context, private val db: GymDatabase, p
                 val f = File(photosDir(), p.fileName)
                 if (f.exists()) { zip.putNextEntry(ZipEntry("photos/${p.fileName}")); f.inputStream().use { it.copyTo(zip) }; zip.closeEntry() }
             }
+            data.exercises.flatMap { listOfNotNull(it.imageStart, it.imageEnd) }.distinct().forEach { name ->
+                val f = File(exerciseImagesDir(), name)
+                if (f.exists()) { zip.putNextEntry(ZipEntry("exercise_images/$name")); f.inputStream().use { it.copyTo(zip) }; zip.closeEntry() }
+            }
         }
     }
 
@@ -101,6 +110,7 @@ class BackupManager(private val context: Context, private val db: GymDatabase, p
         val bytes = input.readBytes()
         var jsonText: String? = null
         val photos = mutableMapOf<String, ByteArray>()
+        val exImages = mutableMapOf<String, ByteArray>()
         if (bytes.size >= 2 && bytes[0] == 'P'.code.toByte() && bytes[1] == 'K'.code.toByte()) {
             ZipInputStream(bytes.inputStream()).use { zip ->
                 var entry = zip.nextEntry
@@ -113,7 +123,11 @@ class BackupManager(private val context: Context, private val db: GymDatabase, p
                             name.startsWith("photos/") -> {
                                 val fileName = name.removePrefix("photos/")
                                 // Guard against path traversal.
-                                if (fileName.isNotBlank() && !fileName.contains('/') && !fileName.contains("..")) photos[fileName] = buf.toByteArray()
+                                if (safeName(fileName)) photos[fileName] = buf.toByteArray()
+                            }
+                            name.startsWith("exercise_images/") -> {
+                                val fileName = name.removePrefix("exercise_images/")
+                                if (safeName(fileName)) exImages[fileName] = buf.toByteArray()
                             }
                         }
                     }
@@ -126,8 +140,11 @@ class BackupManager(private val context: Context, private val db: GymDatabase, p
         writeAutoBackup(prefix = "pre-import")
         restore(data)
         photos.forEach { (name, content) -> File(photosDir(), name).writeBytes(content) }
+        exImages.forEach { (name, content) -> File(exerciseImagesDir(), name).writeBytes(content) }
         data
     }
+
+    private fun safeName(n: String) = n.isNotBlank() && !n.contains('/') && !n.contains('\\') && !n.contains("..")
 
     suspend fun importFromUri(uri: Uri): BackupData =
         context.contentResolver.openInputStream(uri)?.use { importFrom(it) } ?: error("Não foi possível abrir o arquivo.")

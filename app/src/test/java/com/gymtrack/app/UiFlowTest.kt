@@ -7,6 +7,9 @@ import androidx.compose.ui.test.hasTestTag
 import androidx.compose.ui.test.hasText
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
 import androidx.compose.ui.test.onAllNodesWithText
+import androidx.compose.ui.test.onAllNodesWithTag
+import androidx.compose.ui.test.assertTextEquals
+import androidx.compose.ui.test.performScrollTo
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
@@ -37,6 +40,10 @@ class UiFlowTest {
     private val app get() = ApplicationProvider.getApplicationContext<GymTrackApp>()
 
     @Before fun seed() = runBlocking { app.container.workouts.seedIfNeeded() }
+
+    private fun waitTagUnmerged(tag: String) = rule.waitUntil(5_000) {
+        rule.onAllNodes(hasTestTag(tag), useUnmergedTree = true).fetchSemanticsNodes().isNotEmpty()
+    }
 
     private fun back() { rule.runOnUiThread { rule.activity.onBackPressedDispatcher.onBackPressed() } }
 
@@ -169,5 +176,45 @@ class UiFlowTest {
         rule.onNodeWithText("Configurações").performClick()
         rule.onNodeWithTag("theme_LIGHT").performClick()
         rule.waitUntil(5_000) { runBlocking { app.container.settings.current().themeMode.name } == "LIGHT" }
+    }
+
+    @Test fun imagesInLibraryDetailAndWorkout() {
+        // A. Library: every visible card has a thumbnail
+        rule.onNodeWithTag("tab_library").performClick()
+        waitTagUnmerged("thumb_Abdominal máquina")
+        rule.onNodeWithTag("library_search").performTextInput("rosca direta com barra")
+        waitTagUnmerged("thumb_Rosca direta com barra")
+        // B. Detail: large demo, play/expand controls, muscles and common mistakes
+        rule.onNodeWithTag("lib_Rosca direta com barra").performClick()
+        rule.waitUntilAtLeastOneExists(hasTestTag("demo_Rosca direta com barra"), 5_000)
+        rule.onNodeWithTag("demo_play").assertExists()
+        rule.onNodeWithText("Músculos trabalhados").assertExists()
+        rule.onNodeWithTag("demo_expand").performClick()
+        rule.waitUntilAtLeastOneExists(hasTestTag("demo_fullscreen"), 5_000)
+        rule.onNodeWithTag("demo_close").performClick()
+        rule.waitForIdle()
+        rule.onNode(hasText("Erros comuns")).performScrollTo().assertExists()
+        back()
+
+        // C. Workout: thumbnail opens the demo sheet without losing logged values
+        rule.onNodeWithTag("tab_routines").performClick()
+        rule.onNodeWithTag("templates_button").performClick()
+        rule.onNodeWithTag("template_ppl").performClick()
+        rule.waitUntilAtLeastOneExists(hasTestTag("start_Push"), 5_000)
+        rule.onNodeWithTag("start_Push").performClick()
+        rule.waitUntilAtLeastOneExists(hasTestTag("check_Supino reto com barra_1"), 5_000)
+        rule.onNodeWithTag("weight_Supino reto com barra_1").performTextInput("70")
+        rule.onNodeWithTag("reps_Supino reto com barra_1").performTextInput("9")
+        rule.onAllNodesWithTag("thumb_Supino reto com barra")[0].performClick()
+        rule.waitUntilAtLeastOneExists(hasTestTag("demo_sheet"), 5_000)
+        rule.onNodeWithTag("demo_Supino reto com barra").assertExists()
+        rule.onNodeWithTag("back_to_sets").performClick()
+        rule.waitForIdle()
+        rule.onNodeWithTag("weight_Supino reto com barra_1").assertTextEquals("70")
+        rule.onNodeWithTag("reps_Supino reto com barra_1").assertTextEquals("9")
+        rule.onNodeWithTag("check_Supino reto com barra_1").performClick()
+        rule.waitForIdle()
+        val done = runBlocking { app.container.workouts.getActiveSession()!!.let { s -> app.container.db.sessionDao().getSets(s.id).filter { it.completed } } }
+        assertEquals(listOf(70.0 to 9), done.map { it.weight to it.reps })
     }
 }

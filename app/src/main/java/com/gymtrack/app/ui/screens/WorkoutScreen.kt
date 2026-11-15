@@ -99,6 +99,9 @@ import com.gymtrack.app.notify.canPostNotifications
 import com.gymtrack.app.ui.Routes
 import com.gymtrack.app.ui.components.ConfirmDialog
 import com.gymtrack.app.ui.components.ExercisePickerDialog
+import com.gymtrack.app.ui.components.ExerciseDemoSheet
+import com.gymtrack.app.ui.components.ExerciseThumb
+import androidx.compose.material.icons.filled.ZoomOutMap
 import com.gymtrack.app.ui.components.MusclePill
 import com.gymtrack.app.ui.components.Pill
 import com.gymtrack.app.ui.components.ProgressBar
@@ -306,14 +309,24 @@ private fun ExerciseBlock(
     var restDialog by remember { mutableStateOf(false) }
     var notesDialog by remember { mutableStateOf(false) }
     var confirmRemove by remember { mutableStateOf(false) }
+    var showDemo by remember { mutableStateOf(false) }
     val prevWarm = previous.filter { it.isWarmup }
     val prevWork = previous.filter { !it.isWarmup }
 
     Surface(shape = MaterialTheme.shapes.large, color = MaterialTheme.colorScheme.surfaceContainer, modifier = Modifier.testTag("exercise_block_${ex.exercise.name}")) {
         Column(Modifier.padding(vertical = 12.dp)) {
-            Row(Modifier.padding(start = 16.dp, end = 4.dp), verticalAlignment = Alignment.CenterVertically) {
-                Column(Modifier.weight(1f).clickable(onClick = onOpenInfo)) {
-                    Text(ex.exercise.name, style = MaterialTheme.typography.titleLarge, color = MaterialTheme.colorScheme.primary)
+            Row(Modifier.padding(start = 12.dp, end = 4.dp), verticalAlignment = Alignment.CenterVertically) {
+                Box {
+                    ExerciseThumb(ex.exercise, width = 66.dp, onClick = { showDemo = true })
+                    Icon(
+                        Icons.Filled.ZoomOutMap, "Ampliar demonstração de ${ex.exercise.name}",
+                        tint = Color.White, modifier = Modifier.align(Alignment.BottomEnd).padding(3.dp).size(16.dp)
+                            .background(Color.Black.copy(alpha = 0.5f), CircleShape).padding(2.dp),
+                    )
+                }
+                Spacer(Modifier.width(10.dp))
+                Column(Modifier.weight(1f).clickable { showDemo = true }) {
+                    Text(ex.exercise.name, style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.primary)
                     Row(horizontalArrangement = Arrangement.spacedBy(6.dp), modifier = Modifier.padding(top = 4.dp)) {
                         MusclePill(MuscleGroup.fromName(ex.exercise.primaryMuscle))
                         if (ex.entry.repsMin != null) Pill("Meta ${ex.entry.repsMin}–${ex.entry.repsMax} reps")
@@ -364,6 +377,7 @@ private fun ExerciseBlock(
         }
     }
 
+    if (showDemo) ExerciseDemoSheet(ex.exercise, onDismiss = { showDemo = false }, onOpenDetails = { showDemo = false; onOpenInfo() })
     if (restDialog) RestPickerDialog(ex.entry.restSec, onDismiss = { restDialog = false }) { vm.updateEntry(ex.entry.copy(restSec = it)); restDialog = false }
     if (notesDialog) {
         var t by remember { mutableStateOf(ex.entry.notes) }

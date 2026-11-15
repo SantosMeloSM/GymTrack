@@ -173,7 +173,7 @@ class RepositoryTest {
         db.reminderDao().upsert(ReminderEntity(dayOfWeek = 1, hour = 7, minute = 30))
 
         val photos = File(context.filesDir, "test-photos").apply { mkdirs() }
-        val backup = BackupManager(context, db) { photos }
+        val backup = BackupManager(context, db, { photos })
         val out = ByteArrayOutputStream()
         backup.exportZip(out)
 
@@ -191,7 +191,7 @@ class RepositoryTest {
     }
 
     @Test(expected = IllegalArgumentException::class)
-    fun invalidBackupIsRejected() { runBlocking { BackupManager(context, db) { context.filesDir }.importFrom("{\"hello\":1}".byteInputStream()) } }
+    fun invalidBackupIsRejected() { runBlocking { BackupManager(context, db, { context.filesDir }).importFrom("{\"hello\":1}".byteInputStream()) } }
 
     @Test fun csvAndPdfExports() = runBlocking {
         repo.seedIfNeeded()

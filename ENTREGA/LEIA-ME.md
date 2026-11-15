@@ -1,4 +1,56 @@
-# GymTrack v1.0 — Entrega
+# GymTrack — Entrega
+
+## Versão atual: v1.1 (biblioteca visual)
+
+| Item | Valor |
+|---|---|
+| Arquivo | `GymTrack-v1.1.apk` |
+| Tipo | **Release assinado** (APK Signature Scheme v2), otimizado com R8 |
+| Tamanho | 7.076.292 bytes (≈ 6,7 MB) |
+| SHA-256 do APK | `150fffc50a3c35eb3fd396e397a9b6f5b6d03fb825cdf890d6efc46ecdd4d303` |
+| SHA-256 do certificado | `008e77bbc0e9af9fff2326dff50d434dc70b03dc984ffb71878a04214ac9a31c` (o mesmo da v1.0) |
+| Pacote | `com.gymtrack.app` · versão 1.1 (versionCode 2) |
+| Android mínimo | **Android 8.0 (API 26)** |
+
+**Atualização:** instale a v1.1 por cima da v1.0, sem desinstalar. O banco de dados é migrado
+automaticamente (versão 1 → 2, apenas adiciona colunas) e todos os treinos, fichas, medidas e fotos são mantidos.
+
+### Novidades da v1.1
+- **101 de 101 exercícios com imagem** (relatório completo em `RELATORIO-IMAGENS.md`):
+  - 97 com **fotos reais** da posição inicial e da final;
+  - 4 com **ilustrações originais** (elevação lateral máquina, burpee com 4 posições, thruster, kettlebell swing),
+    pois não havia foto livre fiel a esses exercícios.
+- Biblioteca em cards com miniatura, nome, grupo muscular e equipamento.
+- Tela de detalhes com:
+  - imagem grande, deslizar entre as posições e **reprodução sob demanda**;
+  - **tela cheia com zoom** (pinça);
+  - execução, músculos trabalhados, orientações técnicas, **erros comuns** e histórico.
+- Durante o treino: miniatura ao lado de cada exercício. O toque abre a demonstração por cima da sessão,
+  sem perder os valores digitados nem parar os cronômetros; "Voltar às séries" fecha.
+- Exercícios personalizados: imagem inicial e final pela **galeria ou câmera**, com opção de trocar ou remover.
+  As imagens ficam salvas no aparelho e entram no backup `.zip`.
+- Tudo funciona **offline**: as imagens estão dentro do APK, em WebP 720×480.
+- Créditos das imagens em *Mais › Créditos das imagens*.
+
+### Testes da v1.1
+- **28 testes automatizados, todos passando**. Entre eles:
+  - auditoria de mídia (cada arquivo existe, é WebP, decodifica, tem 720×480 e não se repete);
+  - **migração real do banco v1 → v2** com dados;
+  - atualização da biblioteca preservando edições do usuário;
+  - backup com imagens personalizadas;
+  - teste de interface da biblioteca, dos detalhes, da tela cheia e da folha de demonstração no treino.
+- **Emulador Android 10, APK release, instalado por cima da v1.0 com dados reais:**
+  - o treino antigo foi preservado;
+  - as miniaturas aparecem na biblioteca;
+  - os detalhes mostram fotos, controles e erros comuns;
+  - a ilustração de 4 posições do burpee aparece;
+  - no treino, a demonstração abre e o valor digitado é mantido.
+- Não testado em aparelho físico. A troca de imagem pela **câmera** depende do app de câmera do celular
+  e não pôde ser verificada no emulador sem câmera; a escolha pela galeria usa o seletor de fotos do sistema.
+
+---
+
+## Versão anterior: v1.0
 
 | Item | Valor |
 |---|---|

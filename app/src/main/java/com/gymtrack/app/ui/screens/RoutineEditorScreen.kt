@@ -241,7 +241,8 @@ private fun RoutineExerciseCard(e: RoutineExerciseEntity, ex: ExerciseEntity?, i
     Surface(shape = MaterialTheme.shapes.large, color = MaterialTheme.colorScheme.surfaceContainer, modifier = Modifier.testTag("routine_item_${ex?.name}")) {
         Column(Modifier.padding(14.dp)) {
             Row(verticalAlignment = Alignment.CenterVertically) {
-                Text("${index + 1}", style = MaterialTheme.typography.titleLarge, color = MaterialTheme.colorScheme.primary, modifier = Modifier.width(28.dp))
+                Text("${index + 1}", style = MaterialTheme.typography.titleLarge, color = MaterialTheme.colorScheme.primary, modifier = Modifier.width(24.dp))
+                if (ex != null) { com.gymtrack.app.ui.components.ExerciseThumb(ex, width = 60.dp, onClick = onInfo); Spacer(Modifier.width(10.dp)) }
                 Column(Modifier.weight(1f).clickable(onClick = onInfo)) {
                     Text(ex?.name ?: "Exercício removido", style = MaterialTheme.typography.titleMedium)
                     MusclePill(MuscleGroup.fromName(ex?.primaryMuscle), Modifier.padding(top = 4.dp))

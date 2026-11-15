@@ -15,11 +15,14 @@ object ExerciseSeed {
     ) = ExerciseEntity(
         name = name, primaryMuscle = primary.name, secondaryMuscles = secondary.joinToString(",") { it.name },
         equipment = eq.name, description = description, tips = tips, defaultRestSec = rest, seedKey = key,
+        mistakes = ExerciseMistakes.byKey[key].orEmpty(),
     )
 
     private const val COMPOUND = 150
     private const val MEDIUM = 105
     private const val ISO = 75
+
+    fun desc(key: String): String = all.first { it.seedKey == key }.description
 
     val all: List<ExerciseEntity> = listOf(
         // ---------------- PEITO ----------------
@@ -127,7 +130,7 @@ object ExerciseSeed {
             "Em pé, halteres ao lado do corpo, eleve os braços lateralmente até a altura dos ombros com cotovelos levemente flexionados.",
             "Evite usar impulso do tronco. Lidere o movimento com os cotovelos."),
         ex("cable_lateral_raise", "Elevação lateral na polia", SHOULDERS, emptyList(), CABLE, ISO,
-            "Unilateral, polia baixa do lado oposto. Eleve o braço lateralmente até a altura do ombro.",
+            "Sentado (ou em pé) entre as polias baixas, com os cabos cruzados à frente do corpo, eleve os braços lateralmente até a altura dos ombros. Também pode ser feito de forma unilateral.",
             "Tensão constante ao longo da amplitude."),
         ex("machine_lateral_raise", "Elevação lateral máquina", SHOULDERS, emptyList(), MACHINE, ISO,
             "Sentado na máquina, eleve os braços lateralmente com os apoios nos antebraços.",
@@ -185,7 +188,7 @@ object ExerciseSeed {
             "De costas para a polia, corda atrás da cabeça, estenda os cotovelos à frente/acima.",
             "Trabalha a cabeça longa do tríceps em posição alongada."),
         ex("db_overhead_ext", "Tríceps francês com halter", TRICEPS, emptyList(), DUMBBELL, ISO,
-            "Sentado, segure um halter com as duas mãos acima da cabeça, desça atrás da nuca flexionando os cotovelos e estenda.",
+            "Em pé ou sentado, segure um halter com as duas mãos acima da cabeça, desça atrás da nuca flexionando os cotovelos e estenda.",
             "Mantenha os cotovelos apontando para cima."),
         ex("skull_crusher", "Tríceps testa", TRICEPS, emptyList(), EZ_BAR, ISO,
             "Deitado, barra acima do peito, flexione os cotovelos levando a barra em direção à testa e estenda.",
@@ -204,7 +207,7 @@ object ExerciseSeed {
         ex("wrist_curl", "Rosca de punho", FOREARMS, emptyList(), BARBELL, 60,
             "Antebraços apoiados nas coxas, palmas para cima, flexione os punhos.",
             "Amplitude completa e cargas leves."),
-        ex("reverse_curl", "Rosca inversa", FOREARMS, listOf(BICEPS), EZ_BAR, ISO,
+        ex("reverse_curl", "Rosca inversa", FOREARMS, listOf(BICEPS), BARBELL, ISO,
             "Rosca com pegada pronada (palmas para baixo).",
             "Fortalece extensores do punho e braquiorradial."),
         ex("farmer_walk", "Caminhada do fazendeiro", FOREARMS, listOf(TRAPS, ABS, FULL_BODY), DUMBBELL, MEDIUM,
@@ -227,11 +230,11 @@ object ExerciseSeed {
         ex("leg_press", "Leg press 45°", QUADS, listOf(GLUTES, ADDUCTORS), MACHINE, COMPOUND,
             "Sentado, pés na plataforma na largura dos ombros, destrave e desça flexionando os joelhos até onde a lombar continue apoiada; empurre sem travar os joelhos.",
             "Não deixe o quadril sair do banco no final da descida."),
-        ex("goblet_squat", "Agachamento goblet", QUADS, listOf(GLUTES), DUMBBELL, MEDIUM,
-            "Segure um halter junto ao peito e agache mantendo o tronco ereto.",
+        ex("goblet_squat", "Agachamento goblet", QUADS, listOf(GLUTES), KETTLEBELL, MEDIUM,
+            "Segure um kettlebell (ou halter) junto ao peito e agache mantendo o tronco ereto e os cotovelos por dentro dos joelhos.",
             "Ótimo para aprender o padrão do agachamento."),
-        ex("bulgarian_split_squat", "Agachamento búlgaro", QUADS, listOf(GLUTES, ADDUCTORS), DUMBBELL, MEDIUM,
-            "Pé de trás apoiado no banco, desça o joelho de trás em direção ao chão e suba empurrando com a perna da frente.",
+        ex("bulgarian_split_squat", "Agachamento búlgaro", QUADS, listOf(GLUTES, ADDUCTORS), BARBELL, MEDIUM,
+            "Pé de trás apoiado no banco e barra nas costas (ou halteres nas mãos), desça o joelho de trás em direção ao chão e suba empurrando com a perna da frente.",
             "Registre cada perna como uma série ou faça séries por perna."),
         ex("lunge", "Afundo / passada", QUADS, listOf(GLUTES), DUMBBELL, MEDIUM,
             "Dê um passo à frente e desça até ambos os joelhos ficarem perto de 90°; retorne ou avance.",
@@ -305,7 +308,7 @@ object ExerciseSeed {
             "Pendurado na barra, eleve as pernas (estendidas ou flexionadas) controlando o balanço.",
             "Tente retroverter o quadril no topo."),
         ex("lying_leg_raise", "Elevação de pernas deitado", ABS, emptyList(), BODYWEIGHT, 60,
-            "Deitado, eleve as pernas até ~90° e desça sem encostar no chão.",
+            "Deitado no chão ou em um banco, eleve as pernas até ~90° e desça sem encostar no apoio.",
             "Mantenha a lombar apoiada."),
         ex("plank", "Prancha", ABS, listOf(SHOULDERS), BODYWEIGHT, 60,
             "Apoiado nos antebraços e pontas dos pés, mantenha o corpo alinhado.",

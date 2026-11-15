@@ -10,7 +10,9 @@ import com.gymtrack.app.data.db.SessionEntity
 import com.gymtrack.app.data.db.SessionExerciseEntity
 import com.gymtrack.app.data.db.SessionStatus
 import com.gymtrack.app.data.db.SetEntity
+import com.gymtrack.app.data.seed.ExerciseMistakes
 import com.gymtrack.app.data.seed.ExerciseSeed
+import com.gymtrack.app.data.seed.SeedCorrections
 import com.gymtrack.app.data.seed.ProgramTemplate
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.combine
@@ -41,6 +43,25 @@ class WorkoutRepository(private val db: GymDatabase, private val clock: () -> Lo
         val existing = exerciseDao.seedKeys().toSet()
         val missing = ExerciseSeed.all.filter { it.seedKey !in existing }
         if (missing.isNotEmpty()) exerciseDao.insertAll(missing)
+        upgradeSeededExercises()
+    }
+
+    /**
+     * Brings library exercises installed by older versions up to date (common mistakes and the
+     * corrections made when matching images). Only fills empty fields or replaces values that
+     * still equal the original seed text, so user edits are never overwritten.
+     */
+    private suspend fun upgradeSeededExercises() {
+        val fixes = SeedCorrections.all.associateBy { it.key }
+        exerciseDao.getAll().filter { it.seedKey != null && !it.isCustom }.forEach { e ->
+            var u = e
+            if (u.mistakes.isBlank()) ExerciseMistakes.byKey[e.seedKey]?.let { u = u.copy(mistakes = it) }
+            fixes[e.seedKey]?.let { f ->
+                if (f.oldEquipment != null && u.equipment == f.oldEquipment && f.newEquipment != null) u = u.copy(equipment = f.newEquipment)
+                if (f.oldDescriptionPrefix != null && f.newDescription != null && u.description.startsWith(f.oldDescriptionPrefix) && u.description != f.newDescription) u = u.copy(description = f.newDescription)
+            }
+            if (u != e) exerciseDao.update(u)
+        }
     }
 
     // ------------------------------------------------------------- exercises
