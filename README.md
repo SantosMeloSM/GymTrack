@@ -2,17 +2,16 @@
 
 Aplicativo Android de musculação, 100% offline, sem login e sem assinatura.
 
-**APK pronto para instalar:** [`ENTREGA/GymTrack-v1.2.apk`](ENTREGA/) — veja `ENTREGA/LEIA-ME.md`.
+**APK pronto para instalar:** [`ENTREGA/GymTrack-v1.3.apk`](ENTREGA/) — veja `ENTREGA/LEIA-ME.md`.
 
 ## Funcionalidades
 
 - **Fichas de treino ilimitadas**: divisões A/B/C/D, Push/Pull/Legs, personalizadas; duplicar, reordenar,
   séries, faixa de repetições, carga planejada, aquecimentos, descanso por exercício, metas e observações;
   **versões** salvas e restauráveis; **modelos editáveis** (PPL, ABC, ABCD, Upper/Lower, Full Body).
-- **Biblioteca com 107 exercícios, todos com imagem**: 64 com ilustrações anatômicas 3D (posições inicial e
-  final, músculos em destaque), os demais com fotos em domínio público ou ilustrações originais. Grupo
-  principal, secundários, equipamento, execução, orientações e erros comuns. Play = demonstração em loop;
-  tela cheia com zoom; demonstração durante o treino. Novas ilustrações: `tools/import_user_images.py`.
+- **Biblioteca com 101 exercícios, todos com imagem** (97 com fotos das posições inicial e final, em domínio
+  público; 4 com ilustrações originais), grupo principal, secundários, equipamento, execução, orientações e
+  erros comuns. Visualização ampliada com zoom, reprodução sob demanda e demonstração durante o treino.
   Busca sem acentos, filtros, favoritos e exercícios personalizados com fotos da galeria ou câmera.
   Auditoria: `python3 tools/audit_images.py` (gera `ENTREGA/RELATORIO-IMAGENS.md`).
 - **Tela de treino rápida**: séries pré-preenchidas com o último treino (ou a carga planejada), coluna

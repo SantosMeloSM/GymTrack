@@ -44,6 +44,23 @@ class WorkoutRepository(private val db: GymDatabase, private val clock: () -> Lo
         val missing = ExerciseSeed.all.filter { it.seedKey !in existing }
         if (missing.isNotEmpty()) exerciseDao.insertAll(missing)
         upgradeSeededExercises()
+        removeWithdrawnExercises()
+    }
+
+    /**
+     * Exercises that were only in the withdrawn v1.2 library. Unused ones are removed; any that
+     * appear in sessions, routines or goals are kept as custom exercises so no history is lost.
+     */
+    private suspend fun removeWithdrawnExercises() {
+        WITHDRAWN_SEED_KEYS.forEach { key ->
+            val e = exerciseDao.bySeedKey(key) ?: return@forEach
+            val used = exerciseDao.usageCount(e.id) + exerciseDao.routineUsageCount(e.id) + exerciseDao.goalUsageCount(e.id) > 0
+            if (used) exerciseDao.update(e.copy(seedKey = null, isCustom = true)) else exerciseDao.delete(e.id)
+        }
+    }
+
+    companion object {
+        val WITHDRAWN_SEED_KEYS = setOf("sumo_db_squat", "bb_calf_raise", "spider_curl", "db_pullover", "single_arm_pulldown", "one_arm_overhead_ext")
     }
 
     /**

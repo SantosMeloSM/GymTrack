@@ -1,45 +1,28 @@
 # GymTrack — Entrega
 
-## Versão atual: v1.2 (ilustrações anatômicas 3D + demonstração em loop)
+## Versão atual: v1.3 (retorno ao visual da v1.1)
 
 | Item | Valor |
 |---|---|
-| Arquivo | `GymTrack-v1.2.apk` |
-| Tipo | Release assinado (v2), otimizado com R8 |
-| Tamanho | 6.618.226 bytes (≈ 6,3 MB) |
-| SHA-256 do APK | `e8767e751d16eeb911af8010bdcaf4fe81e7e24b6de95b5a8a709de74173027b` |
-| SHA-256 do certificado | `008e77bbc0e9af9fff2326dff50d434dc70b03dc984ffb71878a04214ac9a31c` (o mesmo das versões anteriores) |
-| Pacote | `com.gymtrack.app` · versão 1.2 (versionCode 3) · Android 8.0+ |
+| Arquivo | `GymTrack-v1.3.apk` |
+| Tipo | Release assinado (v2). otimizado com R8 |
+| Tamanho | 7.076.292 bytes |
+| SHA-256 do APK | `dbc62ebfe718e6ad251b024a912144d3a1544ed0229cdaabaf151f7b470811fd` |
+| SHA-256 do certificado | `008e77bbc0e9af9fff2326dff50d434dc70b03dc984ffb71878a04214ac9a31c` (o mesmo de todas as versões) |
+| Pacote | `com.gymtrack.app` · versão 1.3 (versionCode 4) · Android 8.0+ |
 
-Instale por cima da versão anterior, sem desinstalar: os dados são mantidos.
+A v1.3 desfaz completamente a v1.2 (ilustrações anatômicas): o app volta a ser exatamente como na v1.1.
+com as fotos de demonstração (97 exercícios) e as 4 ilustrações. total de 101 exercícios. O número de versão é
+maior apenas para que possa ser instalada por cima da v1.2. sem desinstalar e sem perder dados.
 
-### O que mudou
-- **64 exercícios com as suas ilustrações anatômicas 3D**: 58 que já existiam e 6 novos criados a partir delas
-  (agachamento sumô com halter, panturrilha com barra, rosca spider, pullover, puxada unilateral,
-  tríceps francês unilateral). A biblioteca agora tem 107 exercícios.
-- Revisão das 95 imagens únicas enviadas (154 arquivos, 59 duplicados).
-  **3 rejeitadas por erro:** puxada com a barra atrás da nuca, peck deck sem a posição de contração,
-  crucifixo invertido sem a posição inicial. **1 não identificada com segurança.**
-  Detalhes em `REVISAO-IMAGENS-ENVIADAS.md`.
-- **Play = mini‑vídeo em loop**: a figura passa suavemente da posição inicial para a final e volta, repetindo.
-  Funciona nos detalhes, em tela cheia e na demonstração durante o treino. Roda só enquanto está na tela.
-- Detalhes no padrão da imagem de referência: as duas posições lado a lado, em fundo branco.
-- **43 exercícios ainda sem ilustração 3D** continuam com fotos ou ilustrações da v1.1 (nenhum fica sem imagem).
-  Os prompts prontos para gerá-los no mesmo estilo estão em `REVISAO-IMAGENS-ENVIADAS.md`.
-
-### Testes da v1.2
-- **28 testes automatizados passando.** A auditoria de mídia confere os 216 arquivos.
-  O teste de interface verifica que o Play inicia o loop e o Pause o encerra.
-- **Emulador Android 10, APK release instalado por cima da v1.1:**
-  - os dados foram mantidos;
-  - a biblioteca aparece com 107 exercícios e miniaturas 3D;
-  - os detalhes mostram as duas posições;
-  - o Play anima em loop (capturas em `capturas-v1.2/`).
-- Não testado em aparelho físico.
+- Os 6 exercícios que só existiam na v1.2 são removidos ao abrir o app. Se algum já tiver sido usado em treino.
+  ficha ou meta. ele é mantido como exercício personalizado para não perder o histórico.
+- Testes: 29 automatizados passando; no emulador. v1.3 instalada por cima da v1.2 com os dados preservados
+  e a biblioteca de volta às fotos.
 
 ---
 
-## Versão anterior: v1.1 (biblioteca visual)
+## Versão v1.1 (biblioteca visual)
 
 | Item | Valor |
 |---|---|

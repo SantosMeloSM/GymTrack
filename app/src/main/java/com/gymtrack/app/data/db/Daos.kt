@@ -46,6 +46,12 @@ interface ExerciseDao {
     @Query("SELECT COUNT(*) FROM session_exercises WHERE exerciseId = :id")
     suspend fun usageCount(id: Long): Int
 
+    @Query("SELECT COUNT(*) FROM routine_exercises WHERE exerciseId = :id")
+    suspend fun routineUsageCount(id: Long): Int
+
+    @Query("SELECT COUNT(*) FROM goals WHERE exerciseId = :id")
+    suspend fun goalUsageCount(id: Long): Int
+
     @Query("DELETE FROM exercises WHERE id = :id")
     suspend fun delete(id: Long)
 }

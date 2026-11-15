@@ -103,12 +103,6 @@ object ExerciseMistakes {
         "burpee" to "Quadril caindo na prancha; aterrissar com os joelhos estendidos; perder o ritmo e a postura com o cansaço.",
         "treadmill" to "Segurar nos apoios o tempo todo; passada longa demais; inclinar o tronco à frente.",
         "bike" to "Banco mal regulado (joelhos muito flexionados); ombros tensos; cadência irregular.",
-        "sumo_db_squat" to "Joelhos colapsando para dentro; tronco caindo à frente; halter batendo no chão e perdendo a tensão.",
-        "bb_calf_raise" to "Efeito mola sem pausa; flexionar os joelhos; perder o equilíbrio com a barra.",
-        "spider_curl" to "Tirar o peito do apoio; balançar os braços; não estender completamente na descida.",
-        "db_pullover" to "Descer além da mobilidade do ombro; flexionar e estender os cotovelos (vira tríceps); arquear a lombar.",
-        "single_arm_pulldown" to "Girar o tronco para ajudar; encolher o ombro; puxar a manopla para trás da cabeça.",
-        "one_arm_overhead_ext" to "Cotovelo abrindo para o lado; arquear a lombar; descer rápido atrás da cabeça.",
         "rowing_machine" to "Puxar com os braços antes das pernas; arredondar as costas; voltar o tronco antes das pernas.",
     )
 }

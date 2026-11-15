@@ -96,7 +96,6 @@ fun MoreScreen(nav: NavController) {
     var credits by remember { mutableStateOf(false) }
     val media = appContainer().media
     if (credits) {
-        val anatomy = media.manifest.values.count { it.kind == "anatomy" }
         val photos = media.manifest.values.count { it.kind == "photo" }
         val illus = media.manifest.values.count { it.kind == "illustration" }
         AlertDialog(
@@ -104,7 +103,6 @@ fun MoreScreen(nav: NavController) {
             title = { Text("Créditos das imagens") },
             text = {
                 Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
-                    Text("Ilustrações anatômicas 3D ($anatomy exercícios, posições inicial e final): imagens fornecidas pelo proprietário do app.", style = MaterialTheme.typography.bodyMedium)
                     Text("Fotos de demonstração ($photos exercícios, posições inicial e final): Free Exercise DB — github.com/yuhonas/free-exercise-db, derivado de github.com/wrkout/exercises.json. Publicadas em domínio público (The Unlicense).", style = MaterialTheme.typography.bodyMedium)
                     Text("Ilustrações ($illus exercícios sem foto correspondente): criadas originalmente para o GymTrack.", style = MaterialTheme.typography.bodyMedium)
                     Text("Todas as imagens estão incluídas no aplicativo e funcionam sem internet. Imagens que você adiciona aos seus exercícios ficam apenas neste aparelho.", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)

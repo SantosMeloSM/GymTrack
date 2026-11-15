@@ -58,8 +58,7 @@ class MediaAuditTest {
                 if (bytes == null) { problems += "missing $path"; return@repeat }
                 if (String(bytes, 0, 4) != "RIFF" || String(bytes, 8, 4) != "WEBP") problems += "not webp $path"
                 val bmp = BitmapFactory.decodeByteArray(bytes, 0, bytes.size)
-                val expected = if (entry.kind == "anatomy") 640 to 640 else 720 to 480
-                if (bmp == null || bmp.width != expected.first || bmp.height != expected.second) problems += "decode/size $path ${bmp?.width}x${bmp?.height}"
+                if (bmp == null || bmp.width != 720 || bmp.height != 480) problems += "decode/size $path ${bmp?.width}x${bmp?.height}"
                 val h = MessageDigest.getInstance("SHA-256").digest(bytes).joinToString("") { "%02x".format(it) }
                 hashes.put(h, path)?.let { other -> problems += "duplicate image $path == $other" }
                 if (bytes.size > 120_000) problems += "too large $path ${bytes.size}"
@@ -67,7 +66,6 @@ class MediaAuditTest {
             assertTrue("$key mistakes", ExerciseMistakes.byKey[key].orEmpty().isNotBlank())
         }
         assertTrue(problems.joinToString("\n"), problems.isEmpty())
-        assertTrue("anatomy style used for the provided images", media.manifest.values.count { it.kind == "anatomy" } >= 64)
     }
 
     @Test fun customImagesOverrideAndExerciseWithoutImagesIsHandled() {
@@ -135,6 +133,21 @@ class MigrationAndUpgradeTest {
         assertEquals("BARBELL", reverse.equipment)
         assertEquals("user edit preserved", "Minha versão editada", reverse.description)
         assertEquals("Minha descrição", db.exerciseDao().get(2)!!.description)
+        assertEquals(ExerciseSeed.all.size + 1, db.exerciseDao().count())
+        db.close()
+    }
+
+    @Test fun withdrawnV12ExercisesAreRemovedOrKeptAsCustom() = runBlocking {
+        val db = Room.inMemoryDatabaseBuilder(context, GymDatabase::class.java).allowMainThreadQueries().build()
+        val repo = WorkoutRepository(db)
+        repo.seedIfNeeded()
+        val unused = repo.saveExercise(ExerciseEntity(name = "Rosca spider (barra W)", primaryMuscle = "BICEPS", equipment = "EZ_BAR", seedKey = "spider_curl"))
+        val used = repo.saveExercise(ExerciseEntity(name = "Pullover com halter", primaryMuscle = "CHEST", equipment = "DUMBBELL", seedKey = "db_pullover"))
+        val s = repo.startSession(null); repo.addExerciseToSession(s, used)
+        repo.seedIfNeeded()
+        assertNull(db.exerciseDao().get(unused))
+        val kept = db.exerciseDao().get(used)!!
+        assertTrue(kept.isCustom); assertNull(kept.seedKey)
         assertEquals(ExerciseSeed.all.size + 1, db.exerciseDao().count())
         db.close()
     }
