@@ -24,6 +24,10 @@ data class MediaEntry(
     val sourceId: String? = null,
     val license: String,
     val swapped: Boolean = false,
+    /** Photographer/author, required for attribution (e.g. Wikimedia Commons CC BY / CC BY-SA). */
+    val author: String? = null,
+    /** Link to the original file page, for attribution. */
+    val sourceUrl: String? = null,
 )
 
 /** Resolved demonstration for one exercise. [frames] are Coil models (asset URI strings or Files). */
@@ -63,7 +67,11 @@ class ExerciseMediaRepository(private val context: Context) {
         }
         val key = e.seedKey
         val m = key?.let { manifest[it] } ?: return ExerciseDemo(emptyList(), emptyList(), false, "none", null)
-        val credit = if (m.kind == "photo") "Foto: ${m.source} · ${m.license}" else m.source
+        val credit = when {
+            m.kind == "photo" && m.author != null -> "Foto: ${m.author} · ${m.license} · ${m.source}"
+            m.kind == "photo" -> "Foto: ${m.source} · ${m.license}"
+            else -> m.source
+        }
         return ExerciseDemo((0 until m.frames).map { assetUri(key, it) }, m.captions, isCustom = false, kind = m.kind, credit = credit)
     }
 

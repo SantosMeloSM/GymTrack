@@ -120,17 +120,19 @@
   "swapped": false
  },
  "burpee": {
-  "kind": "illustration",
+  "kind": "photo",
   "frames": 4,
   "captions": [
    "1. Em pé",
-   "2. Agache e apoie as mãos no chão",
-   "3. Pernas para trás: prancha / flexão",
-   "4. Volte e salte com os braços acima da cabeça"
+   "2. Agache e leve as mãos ao chão",
+   "3. Pernas para trás: prancha",
+   "4. Volte e suba (complete com o salto)"
   ],
-  "source": "Ilustração original criada para o GymTrack",
-  "sourceId": null,
-  "license": "Própria (GymTrack)",
+  "source": "Wikimedia Commons",
+  "sourceId": "Burpee 1 Neutral Position.jpg, Burpee 2 Squat.jpg, Burpee 5 Thrust.jpg, Burpee 8 Come Upright.jpg",
+  "license": "CC BY-SA 4.0",
+  "author": "Taco fleur",
+  "sourceUrl": "https://commons.wikimedia.org/wiki/File:Burpee_1_Neutral_Position.jpg",
   "swapped": false
  },
  "cable_crossover": {
@@ -590,15 +592,17 @@
   "swapped": false
  },
  "kb_swing": {
-  "kind": "illustration",
+  "kind": "photo",
   "frames": 2,
   "captions": [
    "Início: quadril para trás, kettlebell entre as pernas",
    "Fim: quadril estendido, kettlebell na altura do peito"
   ],
-  "source": "Ilustração original criada para o GymTrack",
-  "sourceId": null,
-  "license": "Própria (GymTrack)",
+  "source": "Wikimedia Commons",
+  "sourceId": "Kettlebell swing with arms extended upon back swing.jpg, Kettlebell swing with arms fully extended.jpg",
+  "license": "CC BY-SA 4.0",
+  "author": "Taco fleur",
+  "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kettlebell_swing_with_arms_extended_upon_back_swing.jpg",
   "swapped": false
  },
  "lat_pulldown": {
@@ -719,18 +723,6 @@
   "source": "free-exercise-db (github.com/yuhonas/free-exercise-db)",
   "sourceId": "Ab_Crunch_Machine",
   "license": "Unlicense (domínio público)",
-  "swapped": false
- },
- "machine_lateral_raise": {
-  "kind": "illustration",
-  "frames": 2,
-  "captions": [
-   "Início: braços ao lado do corpo, apoios nos braços",
-   "Fim: braços elevados até a altura dos ombros"
-  ],
-  "source": "Ilustração original criada para o GymTrack",
-  "sourceId": null,
-  "license": "Própria (GymTrack)",
   "swapped": false
  },
  "machine_row": {
@@ -1130,15 +1122,16 @@
   "swapped": false
  },
  "thruster": {
-  "kind": "illustration",
-  "frames": 2,
+  "kind": "photo",
+  "frames": 1,
   "captions": [
-   "Início: agachamento frontal, barra apoiada nos ombros",
-   "Fim: em pé, barra estendida acima da cabeça"
+   "Thruster: agachamento frontal (atleta ao fundo) e barra apoiada nos ombros antes do empurrar"
   ],
-  "source": "Ilustração original criada para o GymTrack",
-  "sourceId": null,
-  "license": "Própria (GymTrack)",
+  "source": "Wikimedia Commons",
+  "sourceId": "2008 CrossFit Games - thrusters 2.jpg",
+  "license": "CC BY 2.0",
+  "author": "Brad Greenlee",
+  "sourceUrl": "https://commons.wikimedia.org/wiki/File:2008_CrossFit_Games_-_thrusters_2.jpg",
   "swapped": false
  },
  "treadmill": {

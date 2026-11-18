@@ -14,6 +14,9 @@ SEED = os.path.join(ROOT, "app/src/main/java/com/gymtrack/app/data/seed/Exercise
 OUT = os.path.join(ROOT, "ENTREGA/RELATORIO-IMAGENS.md")
 
 # Notes from the manual visual review (every pair was inspected individually).
+# Shipped without a bundled image on purpose (no licensed photo of a person found); the user can add one in the app.
+WITHOUT_IMAGE = {"machine_lateral_raise": "Sem foto licenciada de pessoa usando a máquina (Wikimedia Commons e Openverse pesquisados). O usuário pode adicionar a própria foto no app."}
+
 REVIEW_NOTES = {
     "bulgarian_split_squat": "Imagem trocada para 'One_Leg_Barbell_Squat' (pé de trás no banco); equipamento ajustado para Barra.",
     "goblet_squat": "Foto com kettlebell: equipamento ajustado para Kettlebell (descrição cita halter como alternativa).",
@@ -33,6 +36,7 @@ total_bytes = 0
 for key, name, muscle in seeds:
     m = manifest.get(key)
     if not m:
+        if key in WITHOUT_IMAGE: rows.append((name, key, "—", 0, "—", "—", "SEM IMAGEM (intencional)")); continue
         problems.append(f"{key}: sem entrada no manifest"); rows.append((name, key, "—", 0, "—", "—", "SEM IMAGEM")); continue
     status = "OK"
     for i in range(m["frames"]):
@@ -52,7 +56,9 @@ for key, name, muscle in seeds:
         if h in hashes: problems.append(f"{key}/{i}.webp idêntica a {hashes[h]}"); status = "ERRO"
         hashes[h] = f"{key}/{i}.webp"
     kind = "Foto" if m["kind"] == "photo" else "Ilustração"
-    src = f"free-exercise-db: `{m['sourceId']}`" if m["kind"] == "photo" else "Original GymTrack"
+    if m.get("author"): src = f"Wikimedia Commons — {m['author']}: {m['sourceId']}"
+    elif m["kind"] == "photo": src = f"free-exercise-db: `{m['sourceId']}`"
+    else: src = "Original GymTrack"
     rows.append((name, key, kind, m["frames"], src, m["license"], status))
 
 extra = sorted(set(manifest) - {k for k, _, _ in seeds})
@@ -66,15 +72,16 @@ files = sum(r[3] for r in rows)
 invalid = sum(1 for p in problems if "ausente" in p or "não" in p or "tamanho" in p or "idêntica" in p)
 
 L = []
-L.append("# GymTrack v1.1 — Relatório de auditoria das imagens\n")
+L.append("# GymTrack v1.4 — Relatório de auditoria das imagens\n")
 L.append("Gerado por `tools/audit_images.py` a partir dos arquivos incluídos no APK (`app/src/main/assets/exercises`).\n")
 L.append("## Resumo\n")
 L.append("| Indicador | Valor |\n|---|---|")
 L.append(f"| Exercícios na biblioteca padrão | **{n}** |")
 L.append(f"| Com pelo menos uma imagem correta | **{with_img} ({with_img*100//n}%)** |")
+L.append(f"| Sem imagem (intencional) | {len(WITHOUT_IMAGE)} — " + "; ".join(f"{k}: {v}" for k, v in WITHOUT_IMAGE.items()) + " |")
 L.append(f"| Com duas ou mais posições | **{two_pos}** |")
 L.append(f"| Fotografias reais | {photos} exercícios ({photos*2} fotos) |")
-L.append(f"| Ilustrações originais | {illus} exercícios |")
+L.append(f"| Desenhos/ilustrações | {illus} exercícios |")
 L.append(f"| Com animação | {two_pos} — reprodução sob demanda alternando as posições reais (não há vídeos/GIFs) |")
 L.append(f"| Arquivos de imagem | {files} WebP, 720×480 (3:2), total {total_bytes/1024/1024:.1f} MB |")
 L.append(f"| Arquivos inválidos | **{invalid}** |")
@@ -92,8 +99,8 @@ L.append("- **Fotos:** [Free Exercise DB](https://github.com/yuhonas/free-exerci
          "Ambos são publicados sob **The Unlicense** (dedicação ao domínio público), que permite uso, modificação e distribuição, inclusive comercial, sem exigência de atribuição. "
          "O crédito é exibido mesmo assim no app (*Mais › Créditos das imagens* e no rodapé de cada exercício). "
          "Observação: a licença é declarada pelos mantenedores desses repositórios; não há como verificar de forma independente a autoria original de cada fotografia.")
-L.append("- **Ilustrações:** criadas para o GymTrack (vetores gerados por código e renderizados localmente) para os exercícios sem foto fiel disponível: "
-         + ", ".join(f"*{r[0]}*" for r in rows if r[2] == "Ilustração") + ".")
+L.append("- **Wikimedia Commons:** burpee e kettlebell swing — fotos de Taco fleur (CC BY-SA 4.0); thruster — foto de Brad Greenlee (CC BY 2.0). "
+         "Redimensionadas/recortadas para o app (as versões adaptadas seguem a mesma licença). Créditos com autor e link no app, em *Mais › Créditos das imagens*.")
 L.append("- As fotos foram redimensionadas e convertidas para WebP; imagens em retrato receberam fundo desfocado (sem cortar o executante).\n")
 L.append("## Exercício por exercício\n")
 L.append("| # | Exercício | Tipo | Posições | Origem | Licença | Status | Observações |\n|---|---|---|---|---|---|---|---|")

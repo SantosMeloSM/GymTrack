@@ -96,16 +96,22 @@ fun MoreScreen(nav: NavController) {
     var credits by remember { mutableStateOf(false) }
     val media = appContainer().media
     if (credits) {
-        val photos = media.manifest.values.count { it.kind == "photo" }
+        val fedb = media.manifest.values.count { it.kind == "photo" && it.author == null }
         val illus = media.manifest.values.count { it.kind == "illustration" }
+        val commons = media.manifest.entries.filter { it.value.author != null }.sortedBy { it.key }
         AlertDialog(
             onDismissRequest = { credits = false },
             title = { Text("Créditos das imagens") },
             text = {
-                Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
-                    Text("Fotos de demonstração ($photos exercícios, posições inicial e final): Free Exercise DB — github.com/yuhonas/free-exercise-db, derivado de github.com/wrkout/exercises.json. Publicadas em domínio público (The Unlicense).", style = MaterialTheme.typography.bodyMedium)
-                    Text("Ilustrações ($illus exercícios sem foto correspondente): criadas originalmente para o GymTrack.", style = MaterialTheme.typography.bodyMedium)
-                    Text("Todas as imagens estão incluídas no aplicativo e funcionam sem internet. Imagens que você adiciona aos seus exercícios ficam apenas neste aparelho.", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                androidx.compose.foundation.lazy.LazyColumn(verticalArrangement = Arrangement.spacedBy(10.dp)) {
+                    item { Text("Fotos de demonstração ($fedb exercícios, posições inicial e final): Free Exercise DB — github.com/yuhonas/free-exercise-db, derivado de github.com/wrkout/exercises.json. Domínio público (The Unlicense).", style = MaterialTheme.typography.bodyMedium) }
+                    if (commons.isNotEmpty()) item { Text("Fotos do Wikimedia Commons (redimensionadas e recortadas para o app; as versões adaptadas seguem a mesma licença):", style = MaterialTheme.typography.bodyMedium) }
+                    items(commons.size) { i ->
+                        val m = commons[i].value
+                        Text("• ${m.sourceId ?: commons[i].key}: ${m.author} — ${m.license}${m.sourceUrl?.let { "\n  $it" } ?: ""}", style = MaterialTheme.typography.bodySmall)
+                    }
+                    if (illus > 0) item { Text("Ilustrações ($illus exercícios): criadas originalmente para o GymTrack.", style = MaterialTheme.typography.bodyMedium) }
+                    item { Text("Todas as imagens estão incluídas no aplicativo e funcionam sem internet. Imagens que você adiciona aos seus exercícios ficam apenas neste aparelho.", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant) }
                 }
             },
             confirmButton = { TextButton(onClick = { credits = false }) { Text("Fechar") } },

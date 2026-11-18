@@ -42,13 +42,18 @@ class MediaAuditTest {
     @Test fun everyLibraryExerciseHasValidOfflineImages() {
         val media = ExerciseMediaRepository(context)
         val seeds = ExerciseSeed.all
-        assertEquals("manifest covers exactly the library", seeds.map { it.seedKey!! }.toSet(), media.manifest.keys)
+        // Exercises intentionally shipped without a bundled image (the user can add their own photo).
+        val withoutImage = setOf("machine_lateral_raise")
+        assertEquals("manifest covers the library", seeds.map { it.seedKey!! }.toSet() - withoutImage, media.manifest.keys)
+        withoutImage.forEach { k -> assertFalse("$k has no bundled image", media.demoFor(seeds.first { it.seedKey == k }).hasImages) }
         val hashes = mutableMapOf<String, String>()
         val problems = mutableListOf<String>()
-        seeds.forEach { e ->
+        seeds.filter { it.seedKey !in withoutImage }.forEach { e ->
             val key = e.seedKey!!
             val entry = media.manifest.getValue(key)
-            assertTrue("$key needs >= 2 frames", entry.frames >= 2)
+            assertTrue("$key needs at least one frame", entry.frames >= 1)
+            assertTrue("$key must be a real photo (no drawings)", entry.kind == "photo")
+            if (entry.license.startsWith("CC BY")) assertTrue("$key needs author for attribution", !entry.author.isNullOrBlank())
             assertEquals("$key captions", entry.frames, entry.captions.size)
             val demo = media.demoFor(e)
             assertEquals(entry.frames, demo.frames.size)
@@ -63,8 +68,8 @@ class MediaAuditTest {
                 hashes.put(h, path)?.let { other -> problems += "duplicate image $path == $other" }
                 if (bytes.size > 120_000) problems += "too large $path ${bytes.size}"
             }
-            assertTrue("$key mistakes", ExerciseMistakes.byKey[key].orEmpty().isNotBlank())
         }
+        seeds.forEach { assertTrue("${it.seedKey} mistakes", ExerciseMistakes.byKey[it.seedKey].orEmpty().isNotBlank()) }
         assertTrue(problems.joinToString("\n"), problems.isEmpty())
     }
 

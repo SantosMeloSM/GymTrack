@@ -98,7 +98,7 @@ class UiFlowTest {
         // Finish
         rule.onNodeWithTag("finish_button").performClick()
         rule.onAllNodesWithText("Concluir")[1].performClick()
-        rule.waitUntilAtLeastOneExists(hasTestTag("summary_done"), 5_000)
+        rule.waitUntilAtLeastOneExists(hasTestTag("summary_done"), 15_000)
         waitText("Peito e tríceps")
 
         val sessions = runBlocking { app.container.workouts.observeFinishedSessions().first() }

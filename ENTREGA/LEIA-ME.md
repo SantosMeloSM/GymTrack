@@ -1,6 +1,32 @@
 # GymTrack — Entrega
 
-## Versão atual: v1.3 (retorno ao visual da v1.1)
+## Versão atual: v1.4 (fotos reais no lugar dos desenhos)
+
+| Item | Valor |
+|---|---|
+| Arquivo | `GymTrack-v1.4.apk` |
+| Tipo | Release assinado (v2), otimizado com R8 |
+| Tamanho | 7.244.584 bytes |
+| SHA-256 do APK | `3a7824b0b16f2ec8bd135836ab58463e65dd415ef9bd42faa8bb69cad65edc93` |
+| SHA-256 do certificado | `008e77bbc0e9af9fff2326dff50d434dc70b03dc984ffb71878a04214ac9a31c` (o mesmo de todas as versões) |
+| Pacote | `com.gymtrack.app` · versão 1.4 (versionCode 5) · Android 8.0+ |
+
+Instale por cima da versão anterior, sem desinstalar: os dados são mantidos.
+
+- **Sem desenhos:** os 4 exercícios que tinham ilustrações agora usam fotos reais ou ficam sem imagem.
+  - **Burpee:** 4 fotos de uma sequência (em pé, agachamento, prancha, retorno). Foto de Taco fleur, Wikimedia Commons, CC BY-SA 4.0.
+  - **Kettlebell swing:** 2 fotos (balanço para trás e braços estendidos na altura do peito). Taco fleur, Wikimedia Commons, CC BY-SA 4.0.
+  - **Thruster:** 1 foto de competição, recortada para tirar um espectador do primeiro plano. Brad Greenlee, Wikimedia Commons, CC BY 2.0.
+  - **Elevação lateral máquina:** sem imagem, a seu pedido. Não há foto licenciada de uma pessoa usando a máquina
+    no Wikimedia Commons nem no Openverse/Flickr. Para adicionar a sua: Exercícios › Elevação lateral máquina › ✏️ › Imagens
+    (câmera ou galeria).
+- Os créditos com autor, licença e link estão em *Mais › Créditos das imagens* e no rodapé de cada exercício.
+- **Testes:** 29 automatizados passando. A auditoria confirma 100 exercícios com fotos reais, nenhum desenho e 0 arquivos inválidos.
+  No emulador, a v1.4 instalou por cima da v1.3 com os dados preservados e as 4 telas conferidas.
+
+---
+
+## Versão v1.3 (retorno ao visual da v1.1)
 
 | Item | Valor |
 |---|---|

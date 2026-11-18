@@ -2,7 +2,7 @@
 
 Aplicativo Android de musculação, 100% offline, sem login e sem assinatura.
 
-**APK pronto para instalar:** [`ENTREGA/GymTrack-v1.3.apk`](ENTREGA/) — veja `ENTREGA/LEIA-ME.md`.
+**APK pronto para instalar:** [`ENTREGA/GymTrack-v1.4.apk`](ENTREGA/) — veja `ENTREGA/LEIA-ME.md`.
 
 ## Funcionalidades
 

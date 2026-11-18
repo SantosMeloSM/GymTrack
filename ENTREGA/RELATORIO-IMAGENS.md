@@ -1,4 +1,4 @@
-# GymTrack v1.1 — Relatório de auditoria das imagens
+# GymTrack v1.4 — Relatório de auditoria das imagens
 
 Gerado por `tools/audit_images.py` a partir dos arquivos incluídos no APK (`app/src/main/assets/exercises`).
 
@@ -7,12 +7,13 @@ Gerado por `tools/audit_images.py` a partir dos arquivos incluídos no APK (`app
 | Indicador | Valor |
 |---|---|
 | Exercícios na biblioteca padrão | **101** |
-| Com pelo menos uma imagem correta | **101 (100%)** |
-| Com duas ou mais posições | **101** |
-| Fotografias reais | 97 exercícios (194 fotos) |
-| Ilustrações originais | 4 exercícios |
-| Com animação | 101 — reprodução sob demanda alternando as posições reais (não há vídeos/GIFs) |
-| Arquivos de imagem | 204 WebP, 720×480 (3:2), total 4.6 MB |
+| Com pelo menos uma imagem correta | **100 (99%)** |
+| Sem imagem (intencional) | 1 — machine_lateral_raise: Sem foto licenciada de pessoa usando a máquina (Wikimedia Commons e Openverse pesquisados). O usuário pode adicionar a própria foto no app. |
+| Com duas ou mais posições | **99** |
+| Fotografias reais | 100 exercícios (200 fotos) |
+| Desenhos/ilustrações | 0 exercícios |
+| Com animação | 99 — reprodução sob demanda alternando as posições reais (não há vídeos/GIFs) |
+| Arquivos de imagem | 201 WebP, 720×480 (3:2), total 4.7 MB |
 | Arquivos inválidos | **0** |
 | Imagens repetidas entre exercícios | **0** |
 | Funciona offline | Sim — todas as imagens estão dentro do APK (assets) |
@@ -31,7 +32,7 @@ Nenhum.
 ## Origem e licença
 
 - **Fotos:** [Free Exercise DB](https://github.com/yuhonas/free-exercise-db), derivado de [wrkout/exercises.json](https://github.com/wrkout/exercises.json). Ambos são publicados sob **The Unlicense** (dedicação ao domínio público), que permite uso, modificação e distribuição, inclusive comercial, sem exigência de atribuição. O crédito é exibido mesmo assim no app (*Mais › Créditos das imagens* e no rodapé de cada exercício). Observação: a licença é declarada pelos mantenedores desses repositórios; não há como verificar de forma independente a autoria original de cada fotografia.
-- **Ilustrações:** criadas para o GymTrack (vetores gerados por código e renderizados localmente) para os exercícios sem foto fiel disponível: *Elevação lateral máquina*, *Kettlebell swing*, *Thruster*, *Burpee*.
+- **Wikimedia Commons:** burpee e kettlebell swing — fotos de Taco fleur (CC BY-SA 4.0); thruster — foto de Brad Greenlee (CC BY 2.0). Redimensionadas/recortadas para o app (as versões adaptadas seguem a mesma licença). Créditos com autor e link no app, em *Mais › Créditos das imagens*.
 - As fotos foram redimensionadas e convertidas para WebP; imagens em retrato receberam fundo desfocado (sem cortar o executante).
 
 ## Exercício por exercício
@@ -72,7 +73,7 @@ Nenhum.
 | 32 | Desenvolvimento Arnold | Foto | 2 | free-exercise-db: `Arnold_Dumbbell_Press` | Unlicense (domínio público) | OK |  |
 | 33 | Elevação lateral | Foto | 2 | free-exercise-db: `Side_Lateral_Raise` | Unlicense (domínio público) | OK |  |
 | 34 | Elevação lateral na polia | Foto | 2 | free-exercise-db: `Cable_Seated_Lateral_Raise` | Unlicense (domínio público) | OK | Foto da variação sentada bilateral: descrição ajustada. |
-| 35 | Elevação lateral máquina | Ilustração | 2 | Original GymTrack | Própria (GymTrack) | OK |  |
+| 35 | Elevação lateral máquina | — | 0 | — | — | SEM IMAGEM (intencional) |  |
 | 36 | Elevação frontal | Foto | 2 | free-exercise-db: `Front_Dumbbell_Raise` | Unlicense (domínio público) | OK |  |
 | 37 | Crucifixo invertido | Foto | 2 | free-exercise-db: `Seated_Bent-Over_Rear_Delt_Raise` | Unlicense (domínio público) | OK |  |
 | 38 | Crucifixo invertido máquina | Foto | 2 | free-exercise-db: `Reverse_Machine_Flyes` | Unlicense (domínio público) | OK |  |
@@ -132,10 +133,10 @@ Nenhum.
 | 92 | Giro russo | Foto | 2 | free-exercise-db: `Russian_Twist` | Unlicense (domínio público) | OK |  |
 | 93 | Abdominal máquina | Foto | 2 | free-exercise-db: `Ab_Crunch_Machine` | Unlicense (domínio público) | OK |  |
 | 94 | Pallof press | Foto | 2 | free-exercise-db: `Pallof_Press` | Unlicense (domínio público) | OK |  |
-| 95 | Kettlebell swing | Ilustração | 2 | Original GymTrack | Própria (GymTrack) | OK |  |
+| 95 | Kettlebell swing | Foto | 2 | Wikimedia Commons — Taco fleur: Kettlebell swing with arms extended upon back swing.jpg, Kettlebell swing with arms fully extended.jpg | CC BY-SA 4.0 | OK |  |
 | 96 | Power clean | Foto | 2 | free-exercise-db: `Power_Clean` | Unlicense (domínio público) | OK |  |
-| 97 | Thruster | Ilustração | 2 | Original GymTrack | Própria (GymTrack) | OK |  |
-| 98 | Burpee | Ilustração | 4 | Original GymTrack | Própria (GymTrack) | OK |  |
+| 97 | Thruster | Foto | 1 | Wikimedia Commons — Brad Greenlee: 2008 CrossFit Games - thrusters 2.jpg | CC BY 2.0 | OK |  |
+| 98 | Burpee | Foto | 4 | Wikimedia Commons — Taco fleur: Burpee 1 Neutral Position.jpg, Burpee 2 Squat.jpg, Burpee 5 Thrust.jpg, Burpee 8 Come Upright.jpg | CC BY-SA 4.0 | OK |  |
 | 99 | Esteira | Foto | 2 | free-exercise-db: `Running_Treadmill` | Unlicense (domínio público) | OK |  |
 | 100 | Bicicleta ergométrica | Foto | 2 | free-exercise-db: `Bicycling_Stationary` | Unlicense (domínio público) | OK |  |
 | 101 | Remo ergômetro | Foto | 2 | free-exercise-db: `Rowing_Stationary` | Unlicense (domínio público) | OK |  |
